@@ -312,9 +312,10 @@ body{
   background:var(--navy);
   color:var(--txt);
   overflow-x:hidden;
-  cursor:none;
+  cursor:auto;
   line-height:1.6;
 }
+body.js-cursor-ready{cursor:none;}
 
 /* CURSOR */
 #cur{position:fixed;width:7px;height:7px;background:var(--teal);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:normal;transition:width .2s,height .2s}
@@ -506,7 +507,7 @@ h2 em{color:var(--teal);font-style:normal}
   background:var(--navy2);
   border:1px solid var(--border2);
   transition:border-color .45s,transform .45s,box-shadow .45s,background .45s;
-  cursor:none;
+  cursor:pointer;
   display:flex;flex-direction:column;
   /* Teal glow line at top — hidden by default */
 }
@@ -698,6 +699,14 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
 .r{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .r.in{opacity:1;transform:none}
 .r[data-d="1"]{transition-delay:.1s}.r[data-d="2"]{transition-delay:.2s}.r[data-d="3"]{transition-delay:.3s}
+
+/* ── FAQ DETAILS ── */
+details summary{user-select:none}
+details summary svg{transition:transform .3s ease}
+details[open] summary svg{transform:rotate(180deg)}
+details summary::-webkit-details-marker{display:none}
+details>div{animation:faqOpen .3s ease}
+@keyframes faqOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
@@ -894,7 +903,7 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
   <div class="port-grid">
 
     <!-- FOTOGRAFIA -->
-    <article class="pcard r" aria-label="Projeto Adeline Palmerston – Fotografia">
+    <article class="pcard r" aria-label="Projeto Adeline Palmerston – Fotografia" onclick="window.open('https://magnetismodepalavras.site/','_blank')" style="cursor:pointer">
       <div class="pthumb">
         <img
           src="https://api.microlink.io/?url=https%3A%2F%2Fmagnetismodepalavras.site%2F&screenshot=true&meta=false&embed=screenshot.url"
@@ -916,7 +925,7 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
     </article>
 
     <!-- ODONTOLOGIA -->
-    <article class="pcard r" data-d="1" aria-label="Projeto Odontocam – Odontologia">
+    <article class="pcard r" data-d="1" aria-label="Projeto Odontocam – Odontologia" onclick="window.open('https://www.odontocam.com.br/','_blank')" style="cursor:pointer">
       <div class="pthumb">
         <img
           src="https://api.microlink.io/?url=https%3A%2F%2Fwww.odontocam.com.br%2F&screenshot=true&meta=false&embed=screenshot.url"
@@ -938,7 +947,7 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
     </article>
 
     <!-- PERSONAL TRAINER -->
-    <article class="pcard r" data-d="2" aria-label="Projeto EmpowerFit – Personal Trainer">
+    <article class="pcard r" data-d="2" aria-label="Projeto EmpowerFit – Personal Trainer" onclick="window.open('https://topenergy2021-netizen.github.io/EMPOWERFIT/','_blank')" style="cursor:pointer">
       <div class="pthumb">
         <img
           src="https://api.microlink.io/?url=https%3A%2F%2Ftopenergy2021-netizen.github.io%2FEMPOWERFIT%2F&screenshot=true&meta=false&embed=screenshot.url"
@@ -1117,7 +1126,7 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
     <div class="logo-icon" aria-hidden="true"><span></span><span></span><span></span></div>
     <span class="logo-wordmark">erix<em>studio</em></span>
   </a>
-  <p>© 2025 Erix Studio. Todos os direitos reservados. | Web Design Profissional – Recife, Pernambuco, Brasil | erixstudiodesign@gmail.com</p>
+  <p>© 2025 Erix Studio. Todos os direitos reservados. | Web Design Profissional – Recife, Pernambuco, Brasil | <a href="mailto:erixstudiodesign@gmail.com" style="color:inherit;text-decoration:none">erixstudiodesign@gmail.com</a></p>
   <div class="flinks">
     <a href="#sobre" title="Sobre a Erix Studio – Web Design">Sobre</a>
     <a href="#portfolio" title="Portfólio de sites criados pela Erix Studio">Portfólio</a>
@@ -1142,7 +1151,8 @@ footer p{font-size:.72rem;color:var(--txt-faint)}
 // ══════════════════════════════════════════════
 const c1=document.getElementById('cur'),c2=document.getElementById('cur2');
 let mx=0,my=0,lx=0,ly=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px'},{passive:true});
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px';},{passive:true});
+document.body.classList.add('js-cursor-ready');
 (function curLoop(){lx+=(mx-lx)*.12;ly+=(my-ly)*.12;c2.style.left=lx+'px';c2.style.top=ly+'px';requestAnimationFrame(curLoop)})();
 
 // ══════════════════════════════════════════════
@@ -1461,7 +1471,7 @@ window.addEventListener('scroll',()=>hdr.classList.toggle('sc',window.scrollY>50
 
       io.unobserve(el);
     });
-  }, {threshold: 0.08, rootMargin:'0px 0px -40px 0px'});
+  }, {threshold: 0, rootMargin:'0px 0px 0px 0px'});
 
   animEls.forEach(el => io.observe(el));
 
@@ -1478,8 +1488,24 @@ window.addEventListener('scroll',()=>hdr.classList.toggle('sc',window.scrollY>50
       });
       obsR.unobserve(e.target);
     });
-  },{threshold:.1});
+  },{threshold:0});
   document.querySelectorAll('.r').forEach(el=>obsR.observe(el));
+
+  // ── Fallback: reveal all after 800ms in case IntersectionObserver doesn't fire ──
+  setTimeout(()=>{
+    document.querySelectorAll('[data-anim]').forEach(el=>{
+      el.style.opacity='1';
+      el.style.transform='none';
+      el.querySelectorAll('.word-inner').forEach(w=>{w.style.opacity='1';w.style.transform='none';});
+    });
+    document.querySelectorAll('.r:not(.in)').forEach(el=>{
+      el.classList.add('in');
+      el.querySelectorAll('.ring-fill[data-pct]').forEach(ring=>{
+        const pct=parseInt(ring.dataset.pct);
+        ring.style.strokeDashoffset=138.2-(pct/100*138.2);
+      });
+    });
+  }, 800);
 
 })();
 
@@ -1488,8 +1514,38 @@ window.addEventListener('scroll',()=>hdr.classList.toggle('sc',window.scrollY>50
 // ══════════════════════════════════════════════
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      const hdrH=document.getElementById('hdr').offsetHeight||70;
+      const top=target.getBoundingClientRect().top+window.scrollY-hdrH-20;
+      window.scrollTo({top,behavior:'smooth'});
+    }
+  });
+});
+
+// ══════════════════════════════════════════════
+// 8. FAQ ACCORDION — chevron rotation via JS (fallback)
+// ══════════════════════════════════════════════
+document.querySelectorAll('#faq details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    const svg=d.querySelector('summary svg');
+    if(svg) svg.style.transform=d.open?'rotate(180deg)':'rotate(0deg)';
+  });
+});
+
+// ══════════════════════════════════════════════
+// 9. PORTFOLIO CARDS — tilt on mouse move
+// ══════════════════════════════════════════════
+document.querySelectorAll('.pcard').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`translateY(-8px) scale(1.01) rotateY(${x*6}deg) rotateX(${-y*4}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='';
   });
 });
 </script>
