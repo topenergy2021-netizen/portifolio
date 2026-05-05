@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="pt" class="scroll-smooth"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gisa Ferreira Beauty | Cabeleireiro e Estética em Caldas da Rainha</title>
+<meta content="Salão de beleza e estética em Caldas da Rainha com 25 anos de experiência. Cabelo, laser, epilação, manicure, spa e muito mais. Agende já!" name="description"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts Noto Serif & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+
+        /* WhatsApp pulse animation */
+        @keyframes wa-pulse {
+          0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+          70% { box-shadow: 0 0 0 14px rgba(212,175,55,0); }
+          100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+        }
+        .wa-pulse {
+          animation: wa-pulse 2s infinite;
+        }
+
+        /* Responsive: hero title scales on small screens */
+        @media (max-width: 640px) {
+          .hero-title { font-size: 2rem !important; line-height: 1.25 !important; }
+          .hero-logo  { height: 7rem !important; }
+        }
+        /* Gallery: 1 col on mobile */
+        @media (max-width: 640px) {
+          .gallery-grid { grid-template-columns: 1fr !important; }
+          .gallery-grid > div { height: 220px !important; }
+          .gallery-grid > div.col-span-2 { grid-column: span 1 !important; }
+        }
+        /* Location iframe full height on mobile */
+        @media (max-width: 768px) {
+          .map-wrap { height: 300px !important; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "primary": "#715859",
+                      "primary-container": "#ebcbcb",
+                      "outline": "#817474",
+                      "primary-fixed-dim": "#debfbf",
+                      "inverse-primary": "#debfbf",
+                      "tertiary-fixed-dim": "#e9c176",
+                      "surface-container-highest": "#eae0e0",
+                      "on-secondary-fixed": "#1d1c16",
+                      "surface-container-high": "#f0e6e5",
+                      "surface-container": "#f6ebeb",
+                      "tertiary-container": "#f6cd81",
+                      "surface-dim": "#e2d8d7",
+                      "secondary": "#615e57",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#eae0e0",
+                      "on-background": "#1f1a1b",
+                      "surface-bright": "#fff8f7",
+                      "on-primary-fixed": "#281717",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#6c5455",
+                      "surface": "#fff8f7",
+                      "on-secondary-container": "#67645c",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fff8f7",
+                      "tertiary-fixed": "#ffdea5",
+                      "on-tertiary-container": "#735615",
+                      "on-primary-fixed-variant": "#574142",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#775a19",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#cac6bd",
+                      "surface-container-low": "#fcf1f1",
+                      "on-surface": "#1f1a1b",
+                      "on-surface-variant": "#4f4444",
+                      "inverse-on-surface": "#f9eeee",
+                      "inverse-surface": "#342f2f",
+                      "surface-tint": "#715859",
+                      "on-secondary-fixed-variant": "#494740",
+                      "secondary-fixed": "#e7e2d8",
+                      "primary-fixed": "#fcdbdb",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "outline-variant": "#d3c3c3",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#e7e2d8",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#261900"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "24px",
+                      "element-gap": "16px",
+                      "section-padding": "80px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Noto Serif"
+                      ],
+                      "label-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Noto Serif"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pt-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F9F6F3]/90 dark:bg-stone-950/90 backdrop-blur-sm border-b border-[#EBCBCB]/20 shadow-sm shadow-[#EBCBCB]/10">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 h-24">
+<div></div> <!-- Placeholder for layout -->
+<ul class="hidden md:flex gap-8 items-center font-serif tracking-tight">
+<li><a class="text-stone-500 dark:text-stone-400 font-light hover:text-[#D4AF37] transition-all duration-300 ease-in-out transform hover:scale-[1.01]" href="#servicos">Serviços</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 font-light hover:text-[#D4AF37] transition-all duration-300 ease-in-out transform hover:scale-[1.01]" href="#sobre">Sobre</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 font-light hover:text-[#D4AF37] transition-all duration-300 ease-in-out transform hover:scale-[1.01]" href="#galeria">Galeria</a></li>
+<li><a class="text-stone-500 dark:text-stone-400 font-light hover:text-[#D4AF37] transition-all duration-300 ease-in-out transform hover:scale-[1.01]" href="#localizacao">Localização</a></li>
+</ul>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm rounded-full border border-tertiary-fixed-dim/30 hover:border-tertiary-fixed-dim transition-colors duration-300 shadow-sm shadow-primary/5" href="https://widget.treatwell.pt/estabelecimento/gisa-ferreira-beauty/" rel="noopener noreferrer" target="_blank">
+                Agendar agora
+            </a>
+<button id="mobile-menu-btn" class="md:hidden text-[#4A3F3F] dark:text-[#EBCBCB] z-50 relative">
+<span id="menu-icon" class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+
+<!-- Mobile menu container -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-md pt-32 px-6 pb-6 flex-col gap-8 items-center md:hidden overflow-hidden h-screen border-b border-primary-container/30">
+    <ul class="flex flex-col gap-8 items-center font-serif tracking-tight text-2xl">
+        <li><a class="mobile-link text-stone-700 font-light hover:text-[#D4AF37] transition-all" href="#servicos">Serviços</a></li>
+        <li><a class="mobile-link text-stone-700 font-light hover:text-[#D4AF37] transition-all" href="#sobre">Sobre</a></li>
+        <li><a class="mobile-link text-stone-700 font-light hover:text-[#D4AF37] transition-all" href="#galeria">Galeria</a></li>
+        <li><a class="mobile-link text-stone-700 font-light hover:text-[#D4AF37] transition-all" href="#localizacao">Localização</a></li>
+    </ul>
+    <a class="inline-flex items-center justify-center px-10 py-4 mt-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-full w-full max-w-xs shadow-lg shadow-primary/20" href="https://widget.treatwell.pt/estabelecimento/gisa-ferreira-beauty/" target="_blank">
+        Agendar agora
+    </a>
+</div>
+
+<main>
+<!-- Hero Section with Slideshow -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+  <!-- Slideshow backgrounds -->
+  <div id="hero-slides" class="absolute inset-0 z-0">
+    <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out"
+         style="background: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; filter: brightness(1.1) saturate(0.85);"></div>
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+         style="background: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat; filter: brightness(1.1) saturate(0.85);"></div>
+    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+         style="background: url('https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; filter: brightness(1.1) saturate(0.85);"></div>
+  </div>
+
+  <!-- Soft light overlay -->
+  <div class="absolute inset-0 z-10 bg-gradient-to-r from-white/50 via-white/25 to-white/5"></div>
+
+  <!-- Content overlay -->
+  <div class="relative z-20 absolute inset-0 flex items-center w-full">
+    <div class="max-w-[container-max] w-full mx-auto px-6 md:px-12">
+      <div class="flex flex-col items-start justify-center text-left w-full lg:w-1/2">
+    <img src="assets1/images/logo.png" alt="Gisa Ferreira Logo" class="hero-logo h-[136px] md:h-[204px] w-auto object-contain mb-6 drop-shadow-xl" />
+    <span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.2em] mb-4">Experiência &amp; Elegância</span>
+    <h1 class="hero-title font-display text-on-background mb-6" style="font-size:clamp(2rem,5vw,3.5rem); line-height:1.2;">25 anos a cuidar das mulheres de Caldas da Rainha</h1>
+    <p class="text-on-surface-variant font-body-lg text-body-lg max-w-xl mb-10">
+      Um santuário dedicado à sua beleza e bem-estar. Descubra tratamentos personalizados num ambiente de puro relaxamento e requinte.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-start -translate-y-[3vh]">
+      <a class="inline-flex justify-center items-center px-8 py-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-full shadow-lg hover:bg-on-primary-container transition-all duration-300 w-full sm:w-auto"
+         href="https://widget.treatwell.pt/estabelecimento/gisa-ferreira-beauty/" target="_blank">
+        Agendar agora
+      </a>
+      <a class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-primary text-primary font-label-sm text-label-sm rounded-full hover:bg-primary-container transition-colors duration-300 w-full sm:w-auto"
+         href="#servicos">
+        Ver Serviços
+      </a>
+    </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-section-padding bg-surface-container-lowest" id="servicos">
+<div class="max-w-[container-max] mx-auto px-6 md:px-12 flex flex-col items-center gap-16">
+<div class="text-center max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Os Nossos Serviços</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Especialistas em estética avançada e cuidados capilares, oferecendo um menu completo para o seu bem-estar.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+<!-- Service Card -->
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">content_cut</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cabelo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Corte, coloração, brushing e tratamentos capilares profundos.</p>
+</div>
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tratamentos de Rosto</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Limpeza de pele, hidratação profunda e tratamentos anti-aging.</p>
+</div>
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">flash_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Laser &amp; Epilação</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Epilação a laser e epilação a cera tradicional com cuidado profissional.</p>
+</div>
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">pan_tool</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Manicure &amp; Gel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Unhas de gel, verniz gel e cuidados de manicure clássica.</p>
+</div>
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">footprint</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Spa dos Pés</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pedicure estética e terapêutica num ambiente relaxante de spa.</p>
+</div>
+<div class="bg-surface rounded-2xl p-8 flex flex-col gap-4 items-start shadow-sm shadow-primary/5 hover:shadow-md transition-shadow duration-300 border border-outline-variant/30 group">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tratamentos de Corpo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Massagens relaxantes, drenagem linfática e tratamentos redutores.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Sobre Section -->
+<section id="sobre" class="py-section-padding bg-surface">
+<div class="max-w-[container-max] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-gutter items-center">
+<div class="relative h-[500px] rounded-[2rem] overflow-hidden shadow-xl shadow-primary/10">
+<img src="assets1/images/gisa_perfil.jpg" alt="Gisa Ferreira" class="w-full h-full object-cover object-top" />
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div class="flex flex-col gap-6">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.15em] opacity-80">Sobre Nós</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">A Arte de Cuidar de Si</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+Com mais de 25 anos de experiência, Gisa Ferreira estabeleceu-se como uma referência em Caldas da Rainha no setor da estética e beleza. O nosso espaço foi cuidadosamente desenhado para ser um refúgio onde o tempo abranda.
+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Acreditamos que cada cliente é única. Combinamos técnicas tradicionais com as mais recentes inovações do mercado para oferecer tratamentos verdadeiramente personalizados, que realçam a sua beleza natural e promovem um bem-estar profundo.
+</p>
+</div>
+</div>
+</section>
+
+<!-- Galeria Section -->
+<section id="galeria" class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-[container-max] mx-auto px-6 md:px-12 flex flex-col items-center gap-12">
+<div class="text-center max-w-2xl">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.15em] opacity-80 mb-4 block">O Nosso Espaço</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Galeria de Beleza</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Um ambiente pensado ao detalhe para lhe proporcionar momentos de puro relaxamento e requinte.</p>
+</div>
+<div id="gallery-container" class="gallery-grid grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+<div class="gallery-item col-span-2 row-span-2 h-[400px] rounded-[1.5rem] overflow-hidden shadow-sm transition-all duration-700">
+<img src="assets1/images/gallery_1.jpg" alt="Interior do Salão" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+</div>
+<div class="gallery-item h-[190px] rounded-[1.5rem] overflow-hidden shadow-sm transition-all duration-700">
+<img src="assets1/images/gallery_2.jpg" alt="Maquilhagem Profissional" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+</div>
+<div class="gallery-item h-[190px] rounded-[1.5rem] overflow-hidden shadow-sm transition-all duration-700">
+<img src="assets1/images/gallery_3.jpg" alt="Cuidados Capilares" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+</div>
+<div class="gallery-item h-[190px] rounded-[1.5rem] overflow-hidden shadow-sm transition-all duration-700">
+<img src="assets1/images/gallery_4.jpg" alt="Manicure" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+</div>
+<div class="gallery-item h-[190px] rounded-[1.5rem] overflow-hidden shadow-sm transition-all duration-700">
+<img src="assets1/images/gallery_5.jpg" alt="Sobrancelhas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+</div>
+</div>
+</div>
+</section>
+
+<!-- Localização Section -->
+<section id="localizacao" class="py-section-padding bg-surface">
+<div class="max-w-[container-max] mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-gutter items-center">
+<div class="flex flex-col gap-8">
+<div>
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.15em] opacity-80 block mb-2">Visite-nos</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">A sua pausa merecida</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+O nosso salão está estrategicamente localizado no coração de Caldas da Rainha, oferecendo também fácil acesso para as regiões de Óbidos e Alcobaça.
+</p>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Morada</h4>
+<p class="font-body-md text-on-surface-variant">R. Alexandre Herculano 4B<br/>2500-244 Caldas da Rainha</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Horário</h4>
+<p class="font-body-md text-on-surface-variant">Seg - Sex: 09:00 - 19:00<br/>Sáb: 09:00 - 13:00</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined">phone</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Contacto</h4>
+<p class="font-body-md text-on-surface-variant"><a href="https://wa.me/351937335667" class="hover:text-primary transition-colors">+351 937 335 667</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="map-wrap relative h-[450px] rounded-[2rem] overflow-hidden shadow-xl shadow-primary/10">
+<iframe src="https://maps.google.com/maps?q=Gisa+Ferreira+Beauty,+R.+Alexandre+Herculano+4B,+Caldas+da+Rainha&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-none border-t border-[#EBCBCB]/30 bg-[#F4EFED] dark:bg-stone-900 shadow-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-20">
+<div class="flex flex-col gap-4">
+<img src="assets1/images/logo.png" alt="Gisa Ferreira Logo" class="h-[156px] w-auto object-contain object-left mb-2" />
+<a href="mailto:gisaferreirasampa@gmail.com" class="text-[#4A3F3F] dark:text-[#EBCBCB] font-sans text-sm hover:text-[#D4AF37] transition-colors break-all">
+    gisaferreirasampa@gmail.com
+</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F] dark:text-[#EBCBCB]">Contactos</h4>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest hover:opacity-70 transition-opacity" href="https://wa.me/351937335667">WhatsApp</a>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest hover:opacity-70 transition-opacity" href="mailto:gisaferreirasampa@gmail.com">Email</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F] dark:text-[#EBCBCB]">Localização</h4>
+<span class="text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest">R. Alexandre Herculano 4B</span>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest hover:opacity-70 transition-opacity" href="#">Caldas da Rainha</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F] dark:text-[#EBCBCB]">Redes Sociais</h4>
+<a class="text-stone-500 dark:text-stone-400 font-sans text-xs uppercase tracking-widest hover:opacity-70 transition-opacity" href="https://www.instagram.com/gisaferreira_beauty" rel="noopener noreferrer" target="_blank">Instagram</a>
+</div>
+
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-[#EBCBCB]/20 flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F]/70 dark:text-[#EBCBCB]/70 text-center md:text-left">
+        © 2024 Gisa Ferreira Beauty. Todos os direitos reservados.
+    </p>
+    <div class="flex flex-wrap justify-center gap-6">
+        <a href="privacidade.html" class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F]/70 dark:text-[#EBCBCB]/70 hover:text-[#D4AF37] transition-colors">Política de Privacidade</a>
+        <a href="termos.html" class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F]/70 dark:text-[#EBCBCB]/70 hover:text-[#D4AF37] transition-colors">Termos e Condições</a>
+        <a href="cookies.html" class="font-sans text-xs uppercase tracking-widest text-[#4A3F3F]/70 dark:text-[#EBCBCB]/70 hover:text-[#D4AF37] transition-colors">Política de Cookies</a>
+    </div>
+</div>
+
+</div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/351937335667" target="_blank" rel="noopener noreferrer"
+   class="wa-pulse fixed bottom-6 right-6 z-50 flex items-center justify-center p-4 rounded-full hover:scale-110 transition-transform duration-300"
+   style="background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #8B6508 100%); color: #ffffff;"
+   aria-label="Contacte-nos pelo WhatsApp">
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+</svg>
+</a>
+
+<!-- LGPD/RGPD Cookie Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-surface-container-lowest/95 backdrop-blur-md border-t border-primary/20 p-4 md:p-6 z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] flex flex-col md:flex-row items-center justify-between gap-6 translate-y-full transition-transform duration-500">
+    <div class="flex-1 text-sm text-on-surface-variant max-w-5xl leading-relaxed">
+        Utilizamos cookies essenciais e de desempenho para melhorar a sua experiência, personalizar conteúdos e analisar o nosso tráfego, de acordo com o RGPD e a LGPD. Ao clicar em "Aceitar", concorda com o armazenamento destas informações. Pode também gerir as suas preferências ou consultar a nossa 
+        <a href="privacidade.html" class="text-primary hover:underline font-semibold">Política de Privacidade</a> e 
+        <a href="cookies.html" class="text-primary hover:underline font-semibold">Política de Cookies</a>.
+    </div>
+    <div class="flex gap-3 shrink-0 w-full md:w-auto justify-end">
+        <button id="decline-cookies" class="px-6 py-2.5 bg-transparent border border-outline text-on-surface-variant font-label-sm rounded-full hover:bg-surface-container transition-colors w-full md:w-auto">Recusar</button>
+        <button id="accept-cookies" class="px-6 py-2.5 bg-primary text-on-primary font-label-sm rounded-full hover:bg-on-primary-container shadow-md transition-colors w-full md:w-auto">Aceitar</button>
+    </div>
+</div>
+
+<script>
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+const menuIcon = document.getElementById('menu-icon');
+
+mobileMenuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        menuIcon.textContent = 'close';
+    } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuIcon.textContent = 'menu';
+    }
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuIcon.textContent = 'menu';
+    });
+});
+
+// Hero Slideshow
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+
+function goToSlide(index) {
+    slides[currentSlide].style.opacity = '0';
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].style.opacity = '1';
+}
+
+setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+// Gallery Shuffle Animation
+const galleryImages = [
+    { src: 'assets1/images/gallery_1.jpg', alt: 'Interior do Salão' },
+    { src: 'assets1/images/gallery_2.jpg', alt: 'Maquilhagem Profissional' },
+    { src: 'assets1/images/gallery_3.jpg', alt: 'Cuidados Capilares' },
+    { src: 'assets1/images/gallery_4.jpg', alt: 'Manicure' },
+    { src: 'assets1/images/gallery_5.jpg', alt: 'Sobrancelhas' }
+];
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function updateGallery() {
+    const items = document.querySelectorAll('.gallery-item');
+    shuffleArray(galleryImages);
+    
+    items.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+            const img = item.querySelector('img');
+            img.src = galleryImages[index].src;
+            img.alt = galleryImages[index].alt;
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+        }, 700);
+    });
+}
+
+// Initial shuffle to avoid static feel
+setInterval(updateGallery, 8000);
+
+// Cookie Banner Logic
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptCookies = document.getElementById('accept-cookies');
+const declineCookies = document.getElementById('decline-cookies');
+
+if (!localStorage.getItem('cookies_accepted')) {
+    setTimeout(() => {
+        cookieBanner.classList.remove('translate-y-full');
+    }, 1000);
+}
+
+acceptCookies.addEventListener('click', () => {
+    localStorage.setItem('cookies_accepted', 'true');
+    cookieBanner.classList.add('translate-y-full');
+});
+
+declineCookies.addEventListener('click', () => {
+    localStorage.setItem('cookies_accepted', 'false');
+    cookieBanner.classList.add('translate-y-full');
+});
+</script>
+
+</body></html>
