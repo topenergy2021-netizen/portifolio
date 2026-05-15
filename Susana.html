@@ -15,12 +15,16 @@
     
     <meta property="og:title" content="Susana Janeiro Psicologia | Psicóloga no Seixal | Margem Sul" />
     <meta property="og:description" content="Psicóloga Clínica presencial no Seixal e online para todo o país. Consultas para adultos, crianças e adolescentes." />
+    <meta property="og:image" content="https://www.susanaoliveira.com/assets/susana-janeiro.webp" />
     <meta property="og:url" content="https://www.susanaoliveira.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
     <meta property="og:site_name" content="Susana Janeiro Psicologia" />
     
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Susana Janeiro Psicologia | Psicóloga no Seixal" />
+    <meta name="twitter:description" content="Psicóloga Clínica presencial no Seixal e online. Especialista em ansiedade, depressão e hipnose clínica." />
+    <meta name="twitter:image" content="https://www.susanaoliveira.com/assets/susana-janeiro.webp" />
     
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <meta name="author" content="Susana Janeiro" />
@@ -126,15 +130,16 @@
         .animate-float { animation: float 10s ease-in-out infinite; }
         
         /* Carousel Styles */
-        .testimonial-carousel { display: flex; transition: transform 0.5s ease-in-out; }
-        .testimonial-card { flex: 0 0 100%; padding: 1rem; }
-        @media (min-width: 768px) { .testimonial-card { flex: 0 0 50%; } }
-        @media (min-width: 1024px) { .testimonial-card { flex: 0 0 33.333333%; } }
-        .dots-container button.active { background-color: #a350e4; width: 1.5rem; }
+        /* Testimonials Grid */
+        .testimonial-grid { columns: 1; gap: 1.5rem; }
+        @media (min-width: 768px) { .testimonial-grid { columns: 2; } }
+        @media (min-width: 1024px) { .testimonial-grid { columns: 3; } }
+        .testimonial-item { break-inside: avoid; margin-bottom: 1.5rem; }
         
         /* Hero Zoom Effect */
         .hero-img { transition: opacity 1.5s ease-in-out, transform 8s ease-in-out !important; transform: scale(1); }
         .hero-img.zoom-active { transform: scale(1.15) !important; }
+        .fill-1 { font-variation-settings: 'FILL' 1; }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-cream-100 antialiased overflow-x-hidden">
@@ -187,9 +192,9 @@
 
     <!-- Conteúdo -->
     <div class="max-w-7xl mx-auto w-full relative z-30 flex">
-        <div class="w-full md:w-3/5 lg:w-1/2 flex flex-col items-start gap-6 fade-up">
+        <div class="w-full md:w-3/5 lg:w-1/2 flex flex-col items-start gap-6 fade-up mt-[10vh]">
             <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                Um Espaço Seguro para a <span class="text-lilac-600">Cura Profunda</span>
+                Um espaço seguro para o seu <span class="text-lilac-600">reencontro profundo</span>
             </h1>
 
             <p class="text-lg text-gray-800 max-w-lg leading-relaxed bg-white/50 backdrop-blur-md p-4 rounded-2xl shadow-sm border border-white/50">
@@ -236,16 +241,17 @@
             <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900">Olá, sou a Susana Janeiro</h2>
             <h3 class="text-xl text-lilac-700 font-medium">Psicóloga Clínica na Margem Sul do Tejo</h3>
             <div class="space-y-4 text-gray-600 text-lg">
-                <p>O meu propósito é guiar cada pessoa rumo a uma vida mais equilibrada, consciente e plena. Acredito que todas as dificuldades emocionais são oportunidades de transformação quando acompanhadas com empatia, respeito e conhecimento científico.</p>
-                <p>Com formação sólida em Psicologia Clínica e uma abordagem centrada na pessoa, crio um espaço seguro e confidencial onde os meus pacientes se sentem ouvidos sem qualquer julgamento.</p>
-                <p>A minha missão é fornecer-lhe as ferramentas necessárias para gerir a ansiedade, superar a depressão e reconstruir a sua autoestima, respeitando o seu ritmo e individualidade.</p>
+                <p>O meu propósito é guiar cada pessoa rumo a uma vida mais equilibrada, consciente e plena. Acredito que todas as dificuldades emocionais podem tornar-se oportunidades de transformação quando acompanhadas com empatia, respeito e conhecimento científico.</p>
+                <p>Sou Mestre em Psicologia Clínica e da Saúde, com diversas formações nas áreas do desenvolvimento pessoal, regulação emocional, ansiedade, autoestima e bem-estar psicológico. A minha prática assenta numa abordagem centrada na pessoa, integrando conhecimento científico atualizado com uma escuta genuína e humanizada.</p>
+                <p>Crio um espaço seguro, acolhedor e confidencial, onde cada pessoa se sente verdadeiramente ouvida, compreendida e respeitada, sem qualquer julgamento.</p>
+                <p>A minha missão é ajudá-lo(a) a desenvolver ferramentas para gerir a ansiedade, superar momentos de depressão, fortalecer a autoestima e promover um maior equilíbrio emocional, sempre respeitando o seu ritmo, a sua história e a sua individualidade.</p>
             </div>
             <div class="bg-cream-100 p-6 rounded-2xl border-l-4 border-lilac-500 mt-4 shadow-sm">
                 <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
                     <span class="material-symbols-outlined text-lilac-600">verified_user</span>
                     Membro da Ordem dos Psicólogos Portugueses
                 </h4>
-                <p class="text-sm text-gray-600">Inscrição nº [a preencher]. A minha prática rege-se rigorosamente pelo Código Deontológico da OPP, garantindo sigilo profissional absoluto e ética em todas as sessões.</p>
+                <p class="text-sm text-gray-600">Inscrição nº 30549. A minha prática rege-se rigorosamente pelo Código Deontológico da OPP, garantindo sigilo profissional absoluto e ética em todas as sessões.</p>
             </div>
         </div>
     </div>
@@ -397,7 +403,7 @@
                     <h3 class="font-serif text-3xl font-bold">Online</h3>
                 </div>
                 <div class="inline-block bg-lilac-800 text-lilac-200 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 self-start">
-                    Todo o Território Nacional e Estrangeiro
+                    Em Todo o Mundo
                 </div>
                 <ul class="space-y-4 text-lilac-100 mb-8 flex-grow">
                     <li class="flex items-start gap-3">
@@ -435,137 +441,43 @@
             <p class="text-lg text-gray-600">A maior recompensa do meu trabalho é testemunhar a evolução e o bem-estar de quem confia no meu acompanhamento.</p>
         </div>
         
-        <div class="relative overflow-hidden fade-up">
-            <div id="carousel-track" class="testimonial-carousel">
-                <!-- 12 Testimonials -->
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"A Dra. Susana ajudou-me imenso a gerir a minha ansiedade. As sessões são um porto de abrigo onde me sinto verdadeiramente ouvida."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=1" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Ana Martins</h4><p class="text-sm text-gray-500">Ansiedade Geral</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Um espaço acolhedor e seguro. Sinto-me muito melhor desde que comecei as consultas. A abordagem é muito humana."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=2" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Ricardo Silva</h4><p class="text-sm text-gray-500">Desenvolvimento Pessoal</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"O acompanhamento online é excelente e muito prático. Consigo conciliar facilmente com o meu horário de trabalho."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=3" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Carla Rodrigues</h4><p class="text-sm text-gray-500">Consulta Online</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Excelente profissional, muito empática e atenciosa. Ajudou-me a ultrapassar uma fase muito difícil da minha vida."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=4" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Maria João</h4><p class="text-sm text-gray-500">Depressão</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"A hipnose clínica fez toda a diferença no meu processo de luto. Senti uma paz que não julgava possíveis."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=5" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">José Pereira</h4><p class="text-sm text-gray-500">Hipnose Clínica</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Ajudou muito o meu filho com a PHDA. Notamos melhorias incríveis no comportamento e no foco dele."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=6" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Sofia Antunes</h4><p class="text-sm text-gray-500">Mãe de Paciente</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Recuperei a minha autoestima e autoconfiança. Hoje sinto-me uma pessoa muito mais segura."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=7" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Beatriz Costa</h4><p class="text-sm text-gray-500">Autoestima</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Abordagem integrativa que realmente funciona. Sinto que todos os aspetos da minha vida foram considerados."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=8" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Luís Fernandes</h4><p class="text-sm text-gray-500">Terapia Integrativa</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Sinto que finalmente tenho ferramentas para lidar com o stress. Técnicas preciosas de regulação emocional."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=9" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Helena Santos</h4><p class="text-sm text-gray-500">Gestão de Stress</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"A Dra. Susana é uma excelente ouvinte e muito pragmática. As sessões são muito produtivas e focadas na solução."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=10" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Paulo Jorge</h4><p class="text-sm text-gray-500">Foco em Resultados</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"O consultório no Seixal é muito calmo e relaxante. Ajuda imenso a entrar num estado de tranquilidade."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=11" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">Marta Ribeiro</h4><p class="text-sm text-gray-500">Consulta Presencial</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
-                        <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span><span class="material-symbols-outlined fill-1">star</span></div>
-                        <p class="text-gray-700 italic text-lg mb-8 flex-grow">"Recomendo vivamente. Foi a melhor decisão que tomei pela minha saúde mental."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://i.pravatar.cc/150?u=12" alt="Paciente" class="w-12 h-12 rounded-full object-cover border-2 border-lilac-100" />
-                            <div><h4 class="font-bold text-gray-900">André Lopes</h4><p class="text-sm text-gray-500">Saúde Mental</p></div>
-                        </div>
-                    </div>
+        <div class="testimonial-grid fade-up">
+            <div class="testimonial-item">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-gray-900 mb-2 text-xl">Cristina Torres</h4>
+                    <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span></div>
+                    <p class="text-gray-700 italic text-lg leading-relaxed">"Quero deixar o meu agradecimento à doutora Susana. Tenho me sentido muito melhor desde que sou acompanhada por si. A sua simpatia, a sua preocupação e os conselhos que me dá têm ajudado bastante."</p>
                 </div>
             </div>
-            
-            <!-- Navigation -->
-            <button id="t-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg text-lilac-600 hover:bg-white transition-all z-20 focus:outline-none ml-2"><span class="material-symbols-outlined">chevron_left</span></button>
-            <button id="t-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg text-lilac-600 hover:bg-white transition-all z-20 focus:outline-none mr-2"><span class="material-symbols-outlined">chevron_right</span></button>
+            <div class="testimonial-item">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-gray-900 mb-2 text-xl">João Silva</h4>
+                    <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span></div>
+                    <p class="text-gray-700 italic text-lg leading-relaxed">"A Doutora Susana é uma excelente profissional. Desde o princípio demostrou uma enorme empatia e preocupação com o meu caso. Ajudou-me imenso a superar os meus problemas."</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-gray-900 mb-2 text-xl">Rita</h4>
+                    <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span></div>
+                    <p class="text-gray-700 italic text-lg leading-relaxed">"Encontrei a Dra. Susana numa altura em que estava especialmente frágil. Foi por acaso que fui ter ao seu consultório mas não foi por acaso que fiquei. Recorro às consultas de psicologia clínica, que me fazem sempre sair do seu consultório mais leve e bem-disposta. O espaço e tempo que a Dra Susana nos proporciona faz-nos sentir seguros e à vontade. Já fiz também consultas de hipnose clínica. Confesso que estava céptica, no início. A Dra Susana percebeu e, sem nunca me impor nada, explicou-me o que estaria por trás e, ao pormenor, como seriam as sessões. Assim, comecei as sessões. Mais uma vez, fiquei. Cada sessão é viagem, carinhosamente guiada. Os resultados vão-se mostrando ao longo do tempo, nas mais pequenas coisas do dia-a-dia. Em vias de dúvida, esta será sempre uma escolha segura! Obrigada Dra!"</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-gray-900 mb-2 text-xl">MR</h4>
+                    <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span></div>
+                    <p class="text-gray-700 italic text-lg leading-relaxed">"A Susana é uma excelente profissional, tem conhecimento e concilia várias áreas da psicologia, desde o tradicional ao alternativo. Sinto que a Susana foi e é uma grande ajuda na minha vida. Sou grata por ter encontrado a Susana."</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <h4 class="font-bold text-gray-900 mb-2 text-xl">G.P</h4>
+                    <div class="flex items-center gap-1 text-lilac-500 mb-6"><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span><span class="material-symbols-outlined fill-1 text-[20px]">star</span></div>
+                    <p class="text-gray-700 italic text-lg leading-relaxed">"Cada consulta, é uma experiência única de terapia e viagem interior. Somos guiados ao som da voz angelical da Susana e de uma sublime e maravilhosa melodia.. Experimentem, sintam, vivam a experiência por vós mesmos"</p>
+                </div>
+            </div>
         </div>
-        
-        <div id="t-dots" class="flex justify-center gap-3 mt-10 dots-container"></div>
     </div>
 </section>
 
@@ -691,7 +603,7 @@
                             <span class="material-symbols-outlined text-lilac-600">computer</span>
                             <div>
                                 <h4 class="font-bold text-gray-900">Online</h4>
-                                <p class="text-gray-600">Todo o território nacional</p>
+                                <p class="text-gray-600">Em Todo o Mundo</p>
                             </div>
                         </div>
                     </div>
@@ -746,11 +658,11 @@
                     </li>
                     <li class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-[18px]">mail</span>
-                        susanamatiasoliveira@gmail.com
+                        susanaoliveiracons@gmail.com
                     </li>
                 </ul>
                 <div class="mt-4 pt-4 border-t border-gray-800">
-                    <p class="text-xs text-gray-500">Membro Efetivo da OPP: nº 0549</p>
+                    <p class="text-xs text-gray-500">Membro Efetivo da OPP: nº 30549</p>
                 </div>
             </div>
             
@@ -786,9 +698,9 @@
         <div class="prose prose-lilac max-w-none text-gray-700">
             <h2 class="font-serif text-3xl font-bold text-gray-900 mb-6">Política de Privacidade</h2>
             <p><strong>1. Identificação do Responsável pelo Tratamento</strong><br>
-            A Susana Janeiro, com sede no Seixal, Portugal, NIF 0549, é a responsável pelo tratamento dos seus dados pessoais em conformidade com o Regulamento (UE) 2016/679 (RGPD).</p>
+            A Susana Janeiro, com sede no Seixal, Portugal, OPP 30549, é a responsável pelo tratamento dos seus dados pessoais em conformidade com o Regulamento (UE) 2016/679 (RGPD).</p>
             <p><strong>2. Encarregado de Proteção de Dados (DPO)</strong><br>
-            Poderá contactar a encarregada de proteção de dados através do email: susanamatiasoliveira@gmail.com.</p>
+            Poderá contactar a encarregada de proteção de dados através do email: susanaoliveiracons@gmail.com.</p>
             <p><strong>3. Dados Recolhidos</strong><br>
             Recolhemos o seu nome, telefone, email e informações relativas a saúde mental necessárias para a marcação e execução de consultas psicológicas.</p>
             <p><strong>4. Finalidade e Base Legal</strong><br>
@@ -1012,68 +924,6 @@
         }, 6000); // 6 segundos para dar tempo ao zoom
     }
 
-    // Carousel Depoimentos Logic
-    const tTrack = document.getElementById('carousel-track');
-    const tCards = document.querySelectorAll('.testimonial-card');
-    const tPrevBtn = document.getElementById('t-prev');
-    const tNextBtn = document.getElementById('t-next');
-    const tDotsContainer = document.getElementById('t-dots');
-    
-    let tCurrentIndex = 0;
-    let tVisibleCards = 1;
-    
-    function updateTVisibleCards() {
-        if (window.innerWidth >= 1024) tVisibleCards = 3;
-        else if (window.innerWidth >= 768) tVisibleCards = 2;
-        else tVisibleCards = 1;
-        createTDots();
-        updateTCarousel();
-    }
-    
-    function createTDots() {
-        if(!tDotsContainer) return;
-        tDotsContainer.innerHTML = '';
-        const dotsCount = tCards.length - tVisibleCards + 1;
-        for (let i = 0; i < dotsCount; i++) {
-            const dot = document.createElement('button');
-            dot.className = `w-3 h-3 rounded-full bg-lilac-200 transition-all ${i === tCurrentIndex ? 'active bg-lilac-600' : ''}`;
-            dot.addEventListener('click', () => {
-                tCurrentIndex = i;
-                updateTCarousel();
-            });
-            tDotsContainer.appendChild(dot);
-        }
-    }
-    
-    function updateTCarousel() {
-        if(!tTrack) return;
-        const dots = tDotsContainer.querySelectorAll('button');
-        const maxIndex = tCards.length - tVisibleCards;
-        if (tCurrentIndex > maxIndex) tCurrentIndex = maxIndex;
-        const offset = tCurrentIndex * (100 / tVisibleCards);
-        tTrack.style.transform = `translateX(-${offset}%)`;
-        dots.forEach((dot, index) => {
-            if (index === tCurrentIndex) dot.classList.add('active', 'bg-lilac-600');
-            else dot.classList.remove('active', 'bg-lilac-600');
-        });
-    }
-    
-    if(tNextBtn) {
-        tNextBtn.addEventListener('click', () => {
-            if (tCurrentIndex < tCards.length - tVisibleCards) tCurrentIndex++;
-            else tCurrentIndex = 0;
-            updateTCarousel();
-        });
-    }
-    if(tPrevBtn) {
-        tPrevBtn.addEventListener('click', () => {
-            if (tCurrentIndex > 0) tCurrentIndex--;
-            else tCurrentIndex = tCards.length - tVisibleCards;
-            updateTCarousel();
-        });
-    }
-    window.addEventListener('resize', updateTVisibleCards);
-    updateTVisibleCards();
 </script>
 
 <script type="application/ld+json">
