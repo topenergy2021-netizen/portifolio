@@ -1,0 +1,36 @@
+# ============================================================
+# robots.txt — Erix Studio
+# https://erixstudio.site
+# Atualizado: 2026-05-21
+# ============================================================
+
+# ─── Todos os crawlers ──────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# ─── Googlebot ───────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# ─── Googlebot-Image (indexa imagens do portfolio) ───────────
+User-agent: Googlebot-Image
+Allow: /
+
+# ─── Googlebot-Mobile ────────────────────────────────────────
+User-agent: Googlebot-Mobile
+Allow: /
+
+# ─── Bingbot ─────────────────────────────────────────────────
+User-agent: bingbot
+Allow: /
+Crawl-delay: 2
+
+# ─── DuckDuckBot ─────────────────────────────────────────────
+User-agent: DuckDuckBot
+Allow: /
+
+# ─── Sitemaps ────────────────────────────────────────────────
+Sitemap: https://erixstudio.site/sitemap.xml

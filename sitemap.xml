@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ══════════════════════════════════════════════════════════
+       ERIX STUDIO — sitemap.xml
+       Domínio: https://erixstudio.site
+       Mercados: Portugal (pt-PT) | Brasil (pt-BR)
+       Atualizado: 2026-05-21
+  ══════════════════════════════════════════════════════════ -->
+
+  <!-- ─── Página principal ─── -->
+  <url>
+    <loc>https://erixstudio.site/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/"/>
+    <image:image>
+      <image:loc>https://erixstudio.site/og-image.jpg</image:loc>
+      <image:title>Erix Studio – Agência de Criação de Sites Profissionais | Portugal e Brasil</image:title>
+      <image:caption>Web design profissional para advogados, dentistas, médicos, psicólogos, fotógrafos e coaches em Portugal e no Brasil</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erixstudio.site/logo.png</image:loc>
+      <image:title>Erix Studio – Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- ─── Seção: Sobre ─── -->
+  <url>
+    <loc>https://erixstudio.site/#sobre</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#sobre"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#sobre"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#sobre"/>
+  </url>
+
+  <!-- ─── Seção: Serviços (alta prioridade — keywords comerciais) ─── -->
+  <url>
+    <loc>https://erixstudio.site/#servicos</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#servicos"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#servicos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#servicos"/>
+  </url>
+
+  <!-- ─── Seção: Portfólio ─── -->
+  <url>
+    <loc>https://erixstudio.site/#portfolio</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#portfolio"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#portfolio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#portfolio"/>
+  </url>
+
+  <!-- ─── Seção: Depoimentos / Avaliações ─── -->
+  <url>
+    <loc>https://erixstudio.site/#depoimentos</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#depoimentos"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#depoimentos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#depoimentos"/>
+  </url>
+
+  <!-- ─── Seção: FAQ ─── -->
+  <url>
+    <loc>https://erixstudio.site/#faq</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#faq"/>
+  </url>
+
+  <!-- ─── Seção: Contato / CTA ─── -->
+  <url>
+    <loc>https://erixstudio.site/#contato</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://erixstudio.site/#contato"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://erixstudio.site/#contato"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://erixstudio.site/#contato"/>
+  </url>
+
+</urlset>
