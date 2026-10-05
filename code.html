@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bearden Mechanical | Precision Climate &amp; Craft</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0A192F',
+              slate: '#1E293B',
+              ice: '#38BDF8',
+              sky: '#0284C7',
+              warm: '#F97316',
+              surface: '#F7F9FC',
+            }
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    :root {
+      --bg-surface: #F7F9FC;
+      --navy: #0A192F;
+      --ice-blue: #38BDF8;
+      --warm-orange: #F97316;
+    }
+    body {
+      background-color: var(--bg-surface);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+    .glass-contact {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 40px -15px rgba(10, 25, 47, 0.08);
+    }
+    .bento-glow-ice {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      top: -60px;
+      right: -60px;
+      pointer-events: none;
+    }
+    .bento-glow-warm {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+      top: -60px;
+      right: -60px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full transition-all">
+<!-- Top Announcement Strip -->
+<div class="bg-brand-navy text-white text-xs font-medium py-1.5 px-4 text-center tracking-wide border-b border-slate-800">
+<span>Serving Mountain Brook, Vestavia Hills, Homewood, &amp; Birmingham Metro • Family Engineering Since 1994</span>
+</div>
+<!-- Main Navigation Bar -->
+<div class="bg-white/85 backdrop-blur-md border-b border-slate-200/80">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Logo / Brandmark -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<img alt="Bearden Mechanical Brandmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLdtByefdqvX2OHzL_k_ZSDAh8jlD2ncR2X97LZpCvKp_UuvAGy7zmuPHdzPVhyCQQlCTz_iODaSiMA6zXYgX2nraoAU4GHUb0C5mnw0jZRf6TuRra6EVoRrAL32e20yNducZYieCnu4se_6qFI6HoHeacTPRUgFjUfFlRfF2Mum-Rliq5gNPC3NrrX3OX68n5tCjhFTfpoJ4sI1ggArlL7P9A2pduXXVzTFXuXP7WWmJf830JTLaSd_U"/>
+<span class="sr-only">Bearden Mechanical</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden lg:flex items-center gap-1 bg-slate-100/70 p-1.5 rounded-full border border-slate-200/60 text-xs font-semibold text-slate-600">
+<a class="px-3.5 py-1.5 rounded-full text-slate-900 bg-white shadow-sm transition" href="#services">Services</a>
+<a class="px-3.5 py-1.5 rounded-full hover:text-slate-900 transition" href="#standards">Precision Standards</a>
+<a class="px-3.5 py-1.5 rounded-full hover:text-slate-900 transition" href="#story">Family Legacy</a>
+<a class="px-3.5 py-1.5 rounded-full hover:text-slate-900 transition" href="#dispatch">Contact &amp; Dispatch</a>
+</nav>
+<!-- Right Call to Action -->
+<div class="flex items-center gap-3">
+<div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-700 text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            24/7 Rapid Response
+          </div>
+<a class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-brand-navy text-white text-xs font-bold hover:bg-slate-800 shadow-sm transition-all hover:scale-[1.02]" href="#dispatch">
+<span>Schedule / (205) 555-BEAR</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-brand-surface">
+<!-- Animated Fluid Ribbon Background -->
+<!-- STITCH_SVG_START:ANIMATION_2 class="absolute inset-0 w-full h-[620px] pointer-events-none opacity-80" --><div class="absolute inset-0 w-full h-[620px] pointer-events-none opacity-80" id="animated-svg-ANIMATION_2" style="display:block;"><svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="coolFlow" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#38BDF8" stop-opacity="0.55"></stop>
+<stop offset="50%" stop-color="#0284C7" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#38BDF8" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="warmFlow" x1="100%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#F97316" stop-opacity="0.45"></stop>
+<stop offset="60%" stop-color="#FB923C" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#F97316" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="blendGlow" x1="0%" x2="100%" y1="50%" y2="50%">
+<stop offset="0%" stop-color="#0284C7" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#F97316" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#38BDF8" stop-opacity="0.25"></stop>
+</lineargradient>
+<filter height="140%" id="fluidBlur" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="35"></fegaussianblur>
+</filter>
+</defs>
+<style>
+    @keyframes ribbonWave1 {
+      0% { d: path('M -100,200 C 200,80 400,320 700,180 C 1000,40 1100,260 1300,150 L 1300,500 L -100,500 Z'); }
+      50% { d: path('M -100,160 C 250,280 450,110 750,250 C 1050,380 1150,120 1300,200 L 1300,500 L -100,500 Z'); }
+      100% { d: path('M -100,200 C 200,80 400,320 700,180 C 1000,40 1100,260 1300,150 L 1300,500 L -100,500 Z'); }
+    }
+    @keyframes ribbonWave2 {
+      0% { d: path('M -100,320 C 150,180 500,420 800,220 C 1050,60 1180,300 1300,240'); }
+      50% { d: path('M -100,260 C 220,400 480,200 820,340 C 1020,440 1150,180 1300,280'); }
+      100% { d: path('M -100,320 C 150,180 500,420 800,220 C 1050,60 1180,300 1300,240'); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.5; transform: scale(1) translate(0, 0); }
+      50% { opacity: 0.8; transform: scale(1.08) translate(-15px, 10px); }
+    }
+    .wave-bg {
+      animation: ribbonWave1 18s ease-in-out infinite;
+    }
+    .wave-stroke {
+      animation: ribbonWave2 14s ease-in-out infinite;
+    }
+    .orb-glow {
+      animation: pulseGlow 10s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+  </style>
+<!-- Ambient Blurred Glow Elements -->
+<g filter="url(#fluidBlur)">
+<circle class="orb-glow" cx="320" cy="220" fill="#38BDF8" opacity="0.32" r="180"></circle>
+<circle class="orb-glow" cx="850" cy="260" fill="#F97316" opacity="0.24" r="160" style="animation-delay: -5s;"></circle>
+</g>
+<!-- Fluid Flow Translucent Ribbons -->
+<path class="wave-bg" d="M -100,200 C 200,80 400,320 700,180 C 1000,40 1100,260 1300,150 L 1300,500 L -100,500 Z" fill="url(#coolFlow)"></path>
+<path class="wave-stroke" d="M -100,320 C 150,180 500,420 800,220 C 1050,60 1180,300 1300,240" fill="none" opacity="0.75" stroke="url(#warmFlow)" stroke-linecap="round" stroke-width="48"></path>
+<!-- Crisp Precision Highlighting Ribbon -->
+<path class="wave-stroke" d="M -100,320 C 150,180 500,420 800,220 C 1050,60 1180,300 1300,240" fill="none" opacity="0.5" stroke="#FFFFFF" stroke-dasharray="8 12" stroke-width="2"></path>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_2 -->
+<!-- Subtle dot matrix pattern overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] [background-size:28px_28px] opacity-40 pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center flex flex-col items-center">
+<!-- Social Proof Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm mb-6">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<span class="text-xs font-semibold tracking-wider uppercase text-slate-700">
+            Birmingham's Premier HVAC Engineering • 4.9★ (420+ Reviews)
+          </span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-navy max-w-4xl leading-[1.08] mb-6">
+          Calibrated <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-sky-600">Climate</span>.<br/>
+          Uncompromising <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Craft</span>.
+        </h1>
+<!-- Subheading -->
+<p class="text-base sm:text-xl text-slate-600 max-w-2xl leading-relaxed mb-10">
+          Precision variable-speed heat pumps, architectural sheet metal zoning, and medical-grade indoor air systems. Engineered for Birmingham's most demanding estates with 30 years of family ownership.
+        </p>
+<!-- CTA Button Group -->
+<div class="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-14">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-navy text-white text-sm font-bold shadow-md hover:bg-slate-800 transition-all hover:scale-[1.01]" href="#dispatch">
+<span>Book Precision Inspection</span>
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/80 backdrop-blur-md text-slate-800 text-sm font-semibold border border-slate-200/90 shadow-sm hover:bg-white transition-all" href="#services">
+<span>Explore Systems Matrix</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+<!-- Micro Features Badges -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-3xl">
+<div class="flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl bg-white/70 backdrop-blur-sm border border-slate-200/60 shadow-sm">
+<span class="material-symbols-outlined text-sky-500 text-[20px]">bolt</span>
+<span class="text-xs font-semibold text-slate-700">15-Min Emergency Response</span>
+</div>
+<div class="flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl bg-white/70 backdrop-blur-sm border border-slate-200/60 shadow-sm">
+<span class="material-symbols-outlined text-sky-500 text-[20px]">verified</span>
+<span class="text-xs font-semibold text-slate-700">Universal NATE Master Certified</span>
+</div>
+<div class="flex items-center justify-center gap-2.5 py-2.5 px-4 rounded-xl bg-white/70 backdrop-blur-sm border border-slate-200/60 shadow-sm">
+<span class="material-symbols-outlined text-orange-500 text-[20px]">handshake</span>
+<span class="text-xs font-semibold text-slate-700">Zero-Upsell Family Guarantee</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BENTO GRID SERVICES SECTION -->
+<section class="py-24 bg-slate-50/70 border-y border-slate-200/60" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+<div>
+<div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-sky-600 mb-2">
+<span class="w-2 h-2 rounded-full bg-sky-500"></span>
+              Division 23 Mechanical Systems
+            </div>
+<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-navy">
+              Engineered Capabilities Matrix
+            </h2>
+</div>
+<p class="text-sm sm:text-base text-slate-500 max-w-md">
+            Calculated with ACCA Manual J, S, and D protocols for whisper-quiet airflow, sub-degree thermal stability, and deep humidity extraction.
+          </p>
+</div>
+<!-- Asymmetric Bento Grid (Linear Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-5">
+<!-- Bento 1: Wide Primary (Span 8) Heat Pumps & Inverters -->
+<div class="lg:col-span-8 glass-card rounded-2xl p-7 sm:p-9 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="bento-glow-ice"></div>
+<div>
+<div class="flex items-center justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold border border-sky-200">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                  Variable-Speed Inverter
+                </span>
+<span class="text-xs font-mono font-medium text-slate-400">SPEC // SEER2-INVERTER</span>
+</div>
+<h3 class="text-2xl font-bold text-slate-900 mb-2">Variable-Speed Heat Pumps &amp; Hyper-Cooling</h3>
+<p class="text-sm sm:text-base text-slate-600 max-w-2xl mb-6">
+                Infinitely modulating inverter compressors adjusting in 1% increments from 25% to 100% capacity. Eliminates Alabama temperature swings, extracts moisture down to 45% relative humidity, and achieves up to 24.5 SEER2 efficiency.
+              </p>
+<!-- Interactive Benchmark Visual -->
+<div class="bg-white/80 rounded-xl p-5 border border-slate-200/80 mb-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+<div>
+<span class="text-xs font-mono uppercase text-slate-400 block mb-0.5">Efficiency Rating</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-brand-navy">24.5</span>
+<span class="text-xs font-bold text-sky-600">SEER2 Peak Ceiling</span>
+</div>
+</div>
+<div class="bg-sky-50/80 px-4 py-2 rounded-lg border border-sky-100">
+<span class="text-xs font-semibold text-sky-700 block">Federal IRA 25C Tax Rebate</span>
+<span class="text-lg font-bold text-brand-navy">$2,000 Instant Cap</span>
+</div>
+</div>
+<div class="pt-4 space-y-2">
+<div class="flex justify-between text-xs font-medium text-slate-500">
+<span>Standard Birmingham Code (14.3 SEER2)</span>
+<span class="font-bold text-sky-600">Bearden Calibrated Inverter (64% Power Reduction)</span>
+</div>
+<div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden flex">
+<div class="h-full bg-slate-300 w-[42%]"></div>
+<div class="h-full bg-gradient-to-r from-sky-400 to-sky-600 w-[58%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xs font-medium text-slate-400">ACCA Certified Manual J Sizing</span>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700" href="#dispatch">
+                Calculate Estate Savings <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Bento 2: Hydronic & Furnace Heating (Span 4) -->
+<div class="lg:col-span-4 glass-card rounded-2xl p-7 sm:p-9 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="bento-glow-warm"></div>
+<div>
+<div class="flex items-center justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-semibold border border-orange-200">
+<span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                  Thermal Diagnostics
+                </span>
+<span class="text-xs font-mono font-medium text-slate-400">98.5% AFUE</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Hydronic Radiant &amp; Condensing Gas</h3>
+<p class="text-sm text-slate-600 mb-6">
+                Dual-fuel intelligence paired with condensing gas technology and quiet hydronic floor systems for draft-free winter warmth.
+              </p>
+<div class="space-y-3 bg-white/70 p-4 rounded-xl border border-slate-200/70 mb-6">
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-slate-600">Digital Manometer Draft Check</span>
+<span class="font-mono font-bold text-orange-600">±0.01 in. w.c.</span>
+</div>
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-slate-600">Combustion Flue Gas Analysis</span>
+<span class="font-mono font-bold text-slate-800">Zero CO Protocol</span>
+</div>
+<div class="flex items-center justify-between text-xs font-medium">
+<span class="text-slate-600">Emergency Cold Snap Fleet</span>
+<span class="font-mono font-bold text-sky-600">24/7 Mobile Rigs</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-brand-navy hover:text-sky-600 transition" href="#dispatch">
+              Book Winter Safety Diagnostic <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Bento 3: Architectural IAQ Filtration (Span 4) -->
+<div class="lg:col-span-4 glass-card rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold border border-sky-200">
+                  Hospital Clean Air
+                </span>
+<span class="text-xs font-mono font-medium text-slate-400">MERV 16 • UV-C</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Architectural Clean Air &amp; IAQ</h3>
+<p class="text-sm text-slate-600 mb-6">
+                Whole-structure HEPA and electrostatic purification targeting Southern pine pollen, mold spores, and micro-pollutants down to 0.1 microns.
+              </p>
+<div class="bg-white/80 p-4 rounded-xl border border-slate-200/80 mb-6">
+<div class="flex justify-between items-center text-xs font-bold text-slate-700 mb-1.5">
+<span>Pollen &amp; Allergen Arrestance</span>
+<span class="text-sky-600 font-mono">99.97%</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-sky-500 h-full w-[99.9%]"></div>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700" href="#dispatch">
+              Request Air Purity Sample <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Bento 4: Custom Sheet Metal & VRF (Span 4) -->
+<div class="lg:col-span-4 glass-card rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200">
+                  In-House Shop
+                </span>
+<span class="text-xs font-mono font-medium text-slate-400">Bham Fab Facility</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Bespoke Sheetmetal &amp; VRF</h3>
+<p class="text-sm text-slate-600 mb-6">
+                Custom fabricated ductwork tailored to historic Mountain Brook architectural cavities and modern high-ceiling estates without acoustic rumble.
+              </p>
+<div class="bg-slate-100/80 p-4 rounded-xl border border-slate-200/60 mb-6 space-y-1.5 text-xs">
+<div class="flex justify-between text-slate-600">
+<span>Duct Air Leakage Standard</span>
+<span class="font-bold text-brand-navy">&lt; 1.5% at 25 Pa</span>
+</div>
+<div class="flex justify-between text-slate-600">
+<span>Acoustic Lining Damping</span>
+<span class="font-bold text-sky-600">-18 dB Attenuation</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700" href="#dispatch">
+              VRF Multi-Zone Consult <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Bento 5: Commercial Maintenance Guild (Span 4) -->
+<div class="lg:col-span-4 glass-card rounded-2xl p-7 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-3 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold border border-sky-200">
+                  Mission Critical SLA
+                </span>
+<span class="text-xs font-mono font-medium text-slate-400">Commercial Guild</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Commercial Facilities Care</h3>
+<p class="text-sm text-slate-600 mb-6">
+                Quarterly preventative mechanical engineering for Birmingham bistros, surgical clinics, and corporate properties with guaranteed 2-hour response.
+              </p>
+<div class="space-y-2 mb-6 text-xs text-slate-600">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-500 text-[18px]">check_circle</span>
+<span>R-454B &amp; Low-GWP compliance audits</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sky-500 text-[18px]">check_circle</span>
+<span>Infrared electrical thermography checks</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700" href="#dispatch">
+              Commercial SLA Plans <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- PRECISION DIFFERENCE / FAMILY LEGACY -->
+<section class="py-24 bg-white" id="standards">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Story column -->
+<div class="lg:col-span-5 space-y-6" id="story">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold uppercase tracking-wider">
+<span>Family Heritage • Founded 1994</span>
+</div>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight leading-tight">
+              Three Decades of Family Craftsmanship in Birmingham.
+            </h2>
+<p class="text-base text-slate-600 leading-relaxed">
+              Founded by Master Craftsman Jack Bearden with a straightforward promise: treat residential thermal comfort with the mathematical rigor of mechanical engineering. We never dispatch commission-based sales reps in disguise. Every team is led by a licensed master tradesperson.
+            </p>
+<div class="p-5 rounded-2xl bg-brand-surface border-l-4 border-sky-500 space-y-2">
+<p class="text-sm italic text-slate-700">
+                “We calibrate each system with digital micron gauges and precision flow hoods. When we sign our name on an inspection tag, it means that unit is operating at absolute peak factory tolerances.”
+              </p>
+<div class="text-xs font-bold text-brand-navy">
+                — Jack &amp; David Bearden, Master Mechanical Contractors (AL Lic #04821)
+              </div>
+</div>
+</div>
+<!-- 4 Pillars Quadrant -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="p-6 rounded-2xl bg-brand-surface border border-slate-200/80 shadow-sm hover:shadow transition">
+<div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 mb-4">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<h4 class="text-base font-bold text-slate-900 mb-1.5">NATE &amp; EPA Universal</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Lead installers hold universal refrigerant certifications, state master gas licenses, and 120+ hours of mandatory annual factory training.
+              </p>
+</div>
+<div class="p-6 rounded-2xl bg-brand-surface border border-slate-200/80 shadow-sm hover:shadow transition">
+<div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 mb-4">
+<span class="material-symbols-outlined text-[24px]">sanitizer</span>
+</div>
+<h4 class="text-base font-bold text-slate-900 mb-1.5">White-Glove Clean Floor</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Protective neoprene runners, clean boot covers at the threshold, and post-service HEPA vacuum sweeps. We leave your living space immaculate.
+              </p>
+</div>
+<div class="p-6 rounded-2xl bg-brand-surface border border-slate-200/80 shadow-sm hover:shadow transition">
+<div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 mb-4">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<h4 class="text-base font-bold text-slate-900 mb-1.5">Upfront Flat Rates</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Transparent diagnostics with clear written itemization before any wrench turns. Never surprise fees, padding, or unapproved change orders.
+              </p>
+</div>
+<div class="p-6 rounded-2xl bg-brand-surface border border-slate-200/80 shadow-sm hover:shadow transition">
+<div class="w-10 h-10 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 mb-4">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<h4 class="text-base font-bold text-slate-900 mb-1.5">10-Year Craft Shield</h4>
+<p class="text-xs text-slate-600 leading-relaxed">
+                Backed by our comprehensive 10-year craftsmanship labor guarantee on every full system replacement, paired with our 365-day satisfaction warranty.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- GLASSMORPHISM DISPATCH & SCHEDULING CARD -->
+<section class="py-20 bg-brand-surface relative overflow-hidden" id="dispatch">
+<!-- Background Glow Orbs -->
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="glass-contact rounded-3xl p-6 sm:p-10 md:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Left Side: Interactive Scheduling Form -->
+<div class="lg:col-span-7 space-y-6">
+<div>
+<span class="text-xs font-bold font-mono uppercase tracking-widest text-sky-600 block mb-1">
+                  Priority Dispatch Queue
+                </span>
+<h3 class="text-2xl sm:text-3xl font-extrabold text-brand-navy tracking-tight">
+                  Schedule Precision Service
+                </h3>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">
+                  Direct connection with our on-call Birmingham master technicians.
+                </p>
+</div>
+<form class="space-y-4" id="dispatch-form">
+<!-- FormSubmit hidden config -->
+<input type="hidden" name="_subject" value="⚡ Nova Solicitação de Serviço — Bearden Mechanical">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="service_category" id="service-category-input" value="AC Diagnostic / Repair">
+<!-- Service Category Chips -->
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-2">Service Category</label>
+<div class="grid grid-cols-2 gap-2 text-center" id="service-chips">
+<button class="chip-btn px-3 py-2 rounded-xl text-xs font-bold bg-brand-navy text-white shadow-sm transition" data-service="AC Diagnostic / Repair" type="button">AC Diagnostic / Repair</button>
+<button class="chip-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition" data-service="Heating Tune-Up" type="button">Heating Tune-Up</button>
+<button class="chip-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition" data-service="Heat Pump Upgrade" type="button">Heat Pump Upgrade</button>
+<button class="chip-btn px-3 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition" data-service="Emergency No-Cool" type="button">Emergency No-Cool</button>
+</div>
+</div>
+<!-- Contact Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Full Name</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm" name="name" placeholder="Katherine Miller" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Phone Number</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm" name="phone" placeholder="(205) 555-0192" required="" type="tel"/>
+</div>
+</div>
+<!-- Neighborhood / ZIP -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Neighborhood / City</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm" name="neighborhood" placeholder="Mountain Brook / Vestavia" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-1">ZIP Code</label>
+<input class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm" name="zip_code" placeholder="35223" required="" type="text"/>
+</div>
+</div>
+<!-- Time Slot -->
+<div>
+<label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Preferred Arrival Window</label>
+<select class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm" name="arrival_window">
+<option>Immediate Emergency Priority (Next Technician)</option>
+<option>Morning Arrival (8:00 AM - 12:00 PM)</option>
+<option>Afternoon Arrival (12:00 PM - 4:00 PM)</option>
+<option>Next-Day Consultation Window</option>
+</select>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-3.5 px-6 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed" id="submit-btn" type="submit">
+<span id="submit-btn-text">Request Instant Dispatch</span>
+<span class="material-symbols-outlined text-[18px]" id="submit-btn-icon">send</span>
+</button>
+<!-- Feedback Toast -->
+<div class="hidden p-3 rounded-xl bg-sky-50 border border-sky-200 text-sky-800 text-xs font-semibold text-center" id="booking-confirmation">
+                  ✓ Dispatch request logged. Our Birmingham field lead will confirm your arrival window within 15 minutes.
+                </div>
+</form>
+</div>
+<!-- Right Side: Direct Master Telephone & Homeowner Proof -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-6 bg-slate-50/80 p-6 sm:p-7 rounded-2xl border border-slate-200/70">
+<!-- Duty Desk Live Badge -->
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-sm">
+                    BM
+                  </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 ring-2 ring-white"></span>
+</div>
+<div>
+<span class="text-sm font-bold text-brand-navy block">Homewood Command Desk</span>
+<span class="text-xs font-semibold text-sky-600">On-Duty • Avg response: 8 mins</span>
+</div>
+</div>
+<!-- Direct Hotline Card -->
+<div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
+<span class="text-xs font-mono uppercase text-slate-400 block mb-1">Direct Field Dispatch Hotline</span>
+<a class="text-2xl font-extrabold text-brand-navy hover:text-sky-600 transition flex items-center gap-2" href="tel:2055552327">
+<span class="material-symbols-outlined text-sky-500">phone_in_talk</span>
+                  (205) 555-BEAR
+                </a>
+<span class="text-xs text-slate-500 mt-1 block">Toll-Free 24/7/365 On-Call Fleet Availability</span>
+</div>
+<!-- Testimonial Quote -->
+<div class="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm space-y-2">
+<div class="flex items-center gap-1 text-orange-400">
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<p class="text-xs text-slate-600 italic leading-relaxed">
+                  “When our heat pump system faulted during a 98° Birmingham heatwave, Bearden's technician arrived with the exact OEM capacitor and calibrated the air handler in 40 minutes. Flawless workmanship.”
+                </p>
+<div class="text-xs font-bold text-slate-800">
+                  — Dr. Arthur Vance, Mountain Brook
+                </div>
+</div>
+<!-- Accreditations Row -->
+<div class="pt-2 flex items-center justify-between text-xs font-semibold text-slate-500 border-t border-slate-200">
+<span>NATE #482910</span>
+<span>Carrier Elite Guild</span>
+<span>AL Lic #04821</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-brand-navy text-slate-400 text-xs py-14 border-t border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+<div class="lg:col-span-2 space-y-3">
+<div class="flex items-center gap-2 text-white font-bold text-base">
+<span>Bearden Mechanical</span>
+<span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Est. 1994</span>
+</div>
+<p class="text-slate-400 max-w-sm leading-relaxed">
+            High-precision HVAC, variable-speed heat pump zoning, and architectural mechanical systems for premier estates throughout Birmingham Metro.
+          </p>
+<div class="text-xs font-mono space-y-1 text-slate-400">
+<p>ALABAMA STATE CONTRACTOR LICENSE: <span class="text-white font-semibold">#04821 (Master Mechanical &amp; Gas)</span></p>
+<p>24/7 RAPID DISPATCH: <span class="text-white font-semibold">(205) 555-2327</span></p>
+</div>
+</div>
+<div class="space-y-2.5">
+<h4 class="text-xs font-bold uppercase tracking-wider text-white">Capabilities</h4>
+<ul class="space-y-1.5 text-slate-400">
+<li><a class="hover:text-white transition" href="#services">Variable-Speed Heat Pumps</a></li>
+<li><a class="hover:text-white transition" href="#services">VRF &amp; Multi-Zone Systems</a></li>
+<li><a class="hover:text-white transition" href="#services">Hydronic Radiant Heating</a></li>
+<li><a class="hover:text-white transition" href="#services">Architectural IAQ Filtration</a></li>
+<li><a class="hover:text-white transition" href="#services">Commercial Maintenance Guild</a></li>
+</ul>
+</div>
+<div class="space-y-2.5">
+<h4 class="text-xs font-bold uppercase tracking-wider text-white">Birmingham Metro</h4>
+<ul class="space-y-1.5 text-slate-400">
+<li><a class="hover:text-white transition" href="#dispatch">Mountain Brook (35223)</a></li>
+<li><a class="hover:text-white transition" href="#dispatch">Vestavia Hills (35216)</a></li>
+<li><a class="hover:text-white transition" href="#dispatch">Homewood (35209)</a></li>
+<li><a class="hover:text-white transition" href="#dispatch">Hoover &amp; Greystone</a></li>
+<li><a class="hover:text-white transition" href="#dispatch">Forest Park &amp; Highland</a></li>
+</ul>
+</div>
+<div class="space-y-2.5">
+<h4 class="text-xs font-bold uppercase tracking-wider text-white">Accreditations</h4>
+<div class="space-y-1.5 text-slate-300">
+<div class="p-2 rounded bg-slate-800/80 border border-slate-700/60">NATE Master Certified</div>
+<div class="p-2 rounded bg-slate-800/80 border border-slate-700/60">EPA Universal Refrigerant</div>
+<div class="p-2 rounded bg-slate-800/80 border border-slate-700/60">Carrier Factory Authorized</div>
+</div>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+<p>© 2025 Bearden Mechanical LLC. All Rights Reserved. Engineered with precision in Birmingham, AL.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-slate-400 transition" href="#">Privacy Policy</a>
+<a class="hover:text-slate-400 transition" href="#">Terms of Service</a>
+<a class="hover:text-slate-400 transition" href="#">Licensing Compliance</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+  // === Service Category Chips ===
+  const chips = document.querySelectorAll('.chip-btn');
+  const serviceCategoryInput = document.getElementById('service-category-input');
+
+  chips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      chips.forEach(b => {
+        b.classList.remove('bg-brand-navy', 'text-white', 'shadow-sm', 'font-bold');
+        b.classList.add('bg-slate-100', 'text-slate-700', 'font-semibold');
+      });
+      btn.classList.add('bg-brand-navy', 'text-white', 'shadow-sm', 'font-bold');
+      btn.classList.remove('bg-slate-100', 'text-slate-700', 'font-semibold');
+      serviceCategoryInput.value = btn.dataset.service;
+    });
+  });
+
+  // === FormSubmit AJAX Submission ===
+  const form = document.getElementById('dispatch-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitBtnText = document.getElementById('submit-btn-text');
+  const submitBtnIcon = document.getElementById('submit-btn-icon');
+  const confirmation = document.getElementById('booking-confirmation');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtnText.textContent = 'Sending...';
+    submitBtnIcon.textContent = 'hourglass_empty';
+
+    const formData = new FormData(form);
+    const dataObject = Object.fromEntries(formData.entries());
+
+    fetch('https://formsubmit.co/ajax/netproducts.online@gmail.com', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(dataObject)
+    })
+    .then(res => res.json())
+    .then(data => {
+      confirmation.classList.remove('hidden');
+      if (data.success === 'true' || data.success === true) {
+        confirmation.className = "p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center shadow-sm";
+        confirmation.innerHTML = "✓ Dispatch request logged. Our Birmingham field lead will confirm your arrival window within 15 minutes.";
+        form.reset();
+        chips.forEach((b, i) => {
+          b.classList.remove('bg-brand-navy', 'text-white', 'shadow-sm', 'font-bold');
+          b.classList.add('bg-slate-100', 'text-slate-700', 'font-semibold');
+          if (i === 0) {
+            b.classList.add('bg-brand-navy', 'text-white', 'shadow-sm', 'font-bold');
+            b.classList.remove('bg-slate-100', 'text-slate-700', 'font-semibold');
+          }
+        });
+        serviceCategoryInput.value = 'AC Diagnostic / Repair';
+      } else {
+        const errorMsg = data.message || 'Ativação pendente ou falha no envio.';
+        confirmation.className = "p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold text-center shadow-sm";
+        confirmation.innerHTML = `⚠️ ${errorMsg}<br><span class="font-normal">Verifique a caixa de entrada (e spam) de <b>netproducts.online@gmail.com</b> para clicar no link de ativação do FormSubmit.</span>`;
+      }
+    })
+    .catch(err => {
+      confirmation.classList.remove('hidden');
+      confirmation.className = "p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold text-center shadow-sm";
+      confirmation.innerHTML = "❌ Ocorreu um erro de conexão ao enviar. Tente novamente ou ligue: (205) 555-BEAR";
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtnText.textContent = 'Request Instant Dispatch';
+      submitBtnIcon.textContent = 'send';
+    });
+  });
+</script>
+</body>
+</html>
