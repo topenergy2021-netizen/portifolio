@@ -11,6 +11,26 @@
 
   gtag('config', 'AW-16848534551');
 </script>
+
+  <script>
+document.addEventListener('click', function (event) {
+  var elemento = event.target;
+
+  if (!elemento || !elemento.closest) return;
+
+  var link = elemento.closest('a[href*="wa.me/"]');
+
+  if (!link) return;
+
+  if (typeof window.gtag !== 'function') return;
+
+  window.gtag('event', 'conversion', {
+    'send_to': 'AW-16848534551/7OX-CLrz5aIdEJf4gOI-',
+    'value': 1.0,
+    'currency': 'BRL'
+  });
+});
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Página Profissional para Psicólogos em Portugal | Erixstudio</title>
