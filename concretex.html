@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CONCRETEX | Engenharia e Tecnologia em Concreto Usinado</title>
+<meta content="Concreto usinado em Pernambuco com traço definido pelo seu engenheiro. Calcule o volume da obra e solicite orçamento pelo WhatsApp." name="description"/>
+<link rel="icon" type="image/png" sizes="512x512" href="imagensconcretex/favicon.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="imagensconcretex/apple-touch-icon.png"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      h1 { font-size: 2.5rem; line-height: 1.1; }
+      h2 { font-size: 2rem; line-height: 1.15; }
+      h3 { font-size: 1.5rem; line-height: 1.2; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 6rem; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #F1F5F9; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E1; border: 2px solid #F1F5F9; }
+    ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+    :focus-visible { outline: 2px solid #0F2744; outline-offset: 2px; }
+    #hero-section { --hero-bg: #F8FAFC; --hero-accent: #0F2744; background-color: var(--hero-bg); transition: background-color 1s ease; }
+    #hero-section[data-tone="1"] { --hero-bg: #F7F0E7; --hero-accent: #9A3412; }
+    #hero-section[data-tone="2"] { --hero-bg: #ECEFF4; --hero-accent: #1E3A8A; }
+    .hero-accent { border-color: var(--hero-accent); transition: border-color 1s ease; }
+    #hero-section[data-tone="1"] .hero-slide img { filter: saturate(1.12) contrast(1.0); }
+    #hero-section[data-tone="0"] .hero-slide img { filter: saturate(0.88) contrast(1.05); }
+    #hero-section[data-tone="2"] .hero-slide img { filter: saturate(0.95) hue-rotate(12deg) contrast(1.03); }
+    .input-invalid { border-color: #BA1A1A !important; background: #FFF5F5 !important; }
+    .input-invalid:focus { outline-color: #BA1A1A; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#FFFFFF",
+            "surface": "#F8FAFC",
+            "surface-dim": "#F1F5F9",
+            "surface-bright": "#FFFFFF",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-low": "#F8FAFC",
+            "surface-container": "#F1F5F9",
+            "surface-container-high": "#E2E8F0",
+            "surface-container-highest": "#CBD5E1",
+            "on-surface": "#0F172A",
+            "on-surface-variant": "#475569",
+            "on-background": "#0F172A",
+            "outline": "#CBD5E1",
+            "outline-variant": "#E2E8F0",
+            "primary": "#0F2744",
+            "primary-container": "#0F2744",
+            "primary-fixed": "#1E3A8A",
+            "primary-fixed-dim": "#172554",
+            "on-primary": "#FFFFFF",
+            "on-primary-container": "#FFFFFF",
+            "secondary": "#1E3A8A",
+            "secondary-container": "#EFF6FF",
+            "on-secondary": "#FFFFFF",
+            "tertiary": "#0F2744",
+            "tertiary-container": "#F1F5F9",
+            "accent-navy": "#0F2744",
+            "accent-navy-hover": "#1E3A8A"
+          },
+          borderRadius: {
+            "DEFAULT": "2px",
+            "md": "2px",
+            "lg": "2px",
+            "xl": "2px",
+            "2xl": "2px",
+            "3xl": "2px",
+            "full": "9999px"
+          },
+          boxShadow: {
+            "sm": "0 1px 2px rgba(15, 23, 42, 0.06)",
+            "DEFAULT": "0 1px 2px rgba(15, 23, 42, 0.08)",
+            "md": "0 1px 2px rgba(15, 23, 42, 0.08)",
+            "lg": "0 1px 2px rgba(15, 23, 42, 0.08)",
+            "xl": "0 1px 2px rgba(15, 23, 42, 0.08)",
+            "2xl": "0 1px 2px rgba(15, 23, 42, 0.08)"
+          },
+          fontFamily: {
+            "display": ["Barlow Condensed", "sans-serif"],
+            "headline": ["Barlow Condensed", "sans-serif"],
+            "body": ["Hanken Grotesk", "sans-serif"],
+            "label": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="bg-[#FFFFFF] font-body text-[15px] leading-relaxed text-[#0F172A] antialiased selection:bg-[#0F2744] selection:text-white">
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:inline-flex focus:items-center focus:h-11 focus:px-4 focus:rounded-sm focus:bg-[#0F2744] focus:text-white focus:font-label focus:text-xs focus:uppercase focus:tracking-wider focus:font-bold text-white" href="#main-content">Pular para o conteúdo</a>
+<!-- ==================== HEADER ==================== -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="h-20 flex items-center justify-between gap-4">
+<!-- Logo & Branding -->
+<a href="#" class="flex flex-col justify-center" aria-label="CONCRETEX — início">
+<div class="flex items-center gap-2">
+<img alt="CONCRETEX" class="h-8 md:h-9 w-auto object-contain" height="168" src="imagensconcretex/logo-web.png" width="512"/>
+</div>
+<span class="font-label text-[10px] text-slate-500 uppercase tracking-widest font-semibold mt-1">Engenharia de Concreto</span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden xl:flex items-center gap-6" aria-label="Navegação principal">
+<a class="font-label text-xs uppercase tracking-wider text-slate-600 hover:text-slate-900 font-semibold transition-colors" href="#servicos">Serviços</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-600 hover:text-slate-900 font-semibold transition-colors" href="#diferenciais">Diferenciais</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-600 hover:text-slate-900 font-semibold transition-colors" href="#calculadora">Calculadora de Volume</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-600 hover:text-slate-900 font-semibold transition-colors" href="#regiao">Disponibilidade</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-600 hover:text-slate-900 font-semibold transition-colors" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20concreto." rel="noopener noreferrer" target="_blank">Contato</a>
+</nav>
+<!-- Header Actions -->
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center justify-center h-11 px-3 sm:px-5 rounded-sm bg-[#0F2744] text-white font-label text-xs font-bold uppercase tracking-wider transition-colors duration-200 hover:bg-[#1E3A8A] active:scale-95 border border-[#0A192F]" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20concreto." rel="noopener noreferrer" target="_blank" aria-label="Orçamento pelo WhatsApp">
+<svg class="w-4 h-4 sm:mr-2 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<span class="hidden sm:inline">Orçamento WhatsApp</span>
+</a>
+<button id="menu-toggle" type="button" class="xl:hidden inline-flex items-center justify-center w-11 h-11 rounded-sm border border-slate-300 text-slate-900 hover:bg-slate-50 transition-colors" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+<span class="material-symbols-outlined text-[24px]" id="menu-icon">menu</span>
+</button>
+</div>
+</div>
+</div>
+<nav id="mobile-nav" class="hidden xl:hidden border-t border-slate-200" aria-label="Navegação móvel">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6 py-2 flex flex-col">
+<a class="font-label text-xs uppercase tracking-wider text-slate-700 hover:text-slate-950 font-semibold py-3 border-b border-slate-100" href="#servicos">Serviços</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-700 hover:text-slate-950 font-semibold py-3 border-b border-slate-100" href="#diferenciais">Diferenciais</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-700 hover:text-slate-950 font-semibold py-3 border-b border-slate-100" href="#calculadora">Calculadora de Volume</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-700 hover:text-slate-950 font-semibold py-3 border-b border-slate-100" href="#regiao">Disponibilidade</a>
+<a class="font-label text-xs uppercase tracking-wider text-slate-700 hover:text-slate-950 font-semibold py-3" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20concreto." rel="noopener noreferrer" target="_blank">Contato</a>
+</div>
+</nav>
+</header>
+<main class="w-full pt-20 bg-[#FFFFFF]" id="main-content" tabindex="-1">
+<div class="flex flex-col w-full text-[#0F172A]">
+<!-- ==================== HERO SECTION ==================== -->
+<section class="relative w-full overflow-hidden -mt-20 pt-28 pb-16 lg:pb-24" id="hero-section" data-tone="0">
+<!-- Construction grid -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(#CBD5E1_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+</div>
+<div class="relative max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<div class="lg:col-span-5 flex flex-col gap-4 py-2 lg:py-6">
+<h1 class="font-headline text-4xl sm:text-5xl xl:text-6xl font-extrabold uppercase tracking-tight text-[#0F2744] leading-[1.05]">
+FORÇA ESTRUTURAL E CONTROLE DE DOSAGEM EM <span class="hero-accent border-b-4 pb-1">PERNAMBUCO</span>.
+</h1>
+<p class="text-base lg:text-lg text-slate-600 leading-relaxed max-w-xl">
+Concreto usinado com traço definido pelo seu engenheiro para lajes residenciais, fundações, pisos industriais e estruturas de maior porte. Resistência especificada em projeto e controle de dosagem por lote.
+</p>
+</div>
+<div class="lg:col-span-7">
+<!-- Hero Slideshow -->
+<div class="relative w-full rounded-sm overflow-hidden border border-slate-300" id="hero-slider">
+  <div class="relative w-full h-[400px] md:h-[540px] lg:h-[620px]">
+
+    <!-- Slides -->
+    <div class="hero-slides absolute inset-0">
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100" aria-hidden="false">
+        <img src="imagensconcretex/hero.jpg" alt="Caminhão betoneira em operação" class="w-full h-full object-cover" width="1024" height="696" fetchpriority="high" decoding="async"/>
+      </div>
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0" aria-hidden="true">
+        <img src="imagensconcretex/hero2.webp" alt="Concretagem de laje residencial" class="w-full h-full object-cover" width="2560" height="1440" loading="lazy" decoding="async"/>
+      </div>
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0" aria-hidden="true">
+        <img src="imagensconcretex/hero3.webp" alt="Caminhão-betoneira sendo carregado na usina" class="w-full h-full object-cover" width="2560" height="1440" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+
+    <!-- Dots de navegação -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <button class="hero-dot w-11 h-11 flex items-center justify-center" data-index="0" aria-label="Slide 1" aria-current="true" type="button"><span class="hero-dot-visual block w-2.5 h-2.5 rounded-full ring-1 ring-slate-950/40 bg-white transition-all duration-300"></span></button>
+      <button class="hero-dot w-11 h-11 flex items-center justify-center" data-index="1" aria-label="Slide 2" type="button"><span class="hero-dot-visual block w-2.5 h-2.5 rounded-full ring-1 ring-slate-950/40 bg-white/40 transition-all duration-300"></span></button>
+      <button class="hero-dot w-11 h-11 flex items-center justify-center" data-index="2" aria-label="Slide 3" type="button"><span class="hero-dot-visual block w-2.5 h-2.5 rounded-full ring-1 ring-slate-950/40 bg-white/40 transition-all duration-300"></span></button>
+    </div>
+    <button id="hero-toggle" type="button" class="absolute bottom-4 right-4 z-20 inline-flex items-center justify-center w-11 h-11 rounded-sm bg-[#0F2744] text-white border border-[#0A192F] hover:bg-[#1E3A8A] transition-colors" aria-label="Pausar apresentação">
+      <span class="material-symbols-outlined text-[20px]" id="hero-toggle-icon">pause</span>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  const slider = document.getElementById('hero-slider');
+  const toggle = document.getElementById('hero-toggle');
+  const toggleIcon = document.getElementById('hero-toggle-icon');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let timer = null;
+  let paused = false;
+
+  function paint() {
+    document.getElementById('hero-section').setAttribute('data-tone', String(current));
+    slides.forEach((slide, index) => {
+      slide.style.opacity = index === current ? '1' : '0';
+      slide.setAttribute('aria-hidden', index === current ? 'false' : 'true');
+    });
+    dots.forEach((dot, index) => {
+      const visual = dot.querySelector('.hero-dot-visual');
+      visual.classList.toggle('bg-white', index === current);
+      visual.classList.toggle('bg-white/40', index !== current);
+      if (index === current) {
+        dot.setAttribute('aria-current', 'true');
+      } else {
+        dot.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    paint();
+  }
+
+  function next() { goTo(current + 1); }
+
+  function stop() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function start() {
+    if (paused || reduceMotion) return;
+    stop();
+    timer = setInterval(next, 5000);
+  }
+
+  function setPaused(value) {
+    paused = value;
+    toggleIcon.textContent = paused ? 'play_arrow' : 'pause';
+    toggle.setAttribute('aria-label', paused ? 'Retomar apresentação' : 'Pausar apresentação');
+    if (paused) {
+      stop();
+    } else {
+      start();
+    }
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      goTo(parseInt(dot.dataset.index, 10));
+      start();
+    });
+  });
+
+  toggle.addEventListener('click', () => setPaused(!paused));
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', () => { if (!paused) start(); });
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', (event) => {
+    if (!slider.contains(event.relatedTarget) && !paused) start();
+  });
+
+  paint();
+  if (reduceMotion) {
+    toggle.classList.add('hidden');
+  } else {
+    start();
+  }
+})();
+</script>
+</div>
+</section>
+<!-- ==================== TECHNICAL SPEC RAIL ==================== -->
+<section class="w-full bg-[#F1F5F9] py-5 border-y border-slate-200" aria-label="Especificações técnicas">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-3">
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-900 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">verified</span> CONCRETO USINADO FCK 20 A 50+ MPA
+</span>
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-700 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">engineering</span> BOMBEAMENTO SOB CONSULTA
+</span>
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-700 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">layers</span> LAJES, RADIERS, PILARES E PISOS INDUSTRIAIS
+</span>
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-700 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">science</span> TRAÇO DEFINIDO PELO SEU ENGENHEIRO
+</span>
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-700 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">local_shipping</span> ATENDIMENTO EM PERNAMBUCO
+</span>
+<span class="flex items-center gap-2 font-label text-xs tracking-widest uppercase text-slate-700 font-bold">
+<span class="material-symbols-outlined text-[18px] text-[#0F2744]">info</span> DISPONIBILIDADE CONFIRMADA NA COTAÇÃO
+</span>
+</div>
+</div>
+</section>
+<!-- ==================== BENTO GRID: SERVIÇOS & SOLUÇÕES ==================== -->
+<section class="w-full py-20 lg:py-28 relative bg-[#FFFFFF]" id="servicos">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h2 class="font-headline text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-slate-950">
+                ENGENHARIA APLICADA: SOLUÇÕES EM CONCRETO
+              </h2>
+<p class="text-sm md:text-base text-slate-600">
+                Soluções em concreto para diferentes etapas da obra, com traço definido a partir do projeto estrutural e das condições de aplicação.
+              </p>
+</div>
+</div>
+<!-- Bento Grid Corporate Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+<!-- CARD 1 (Spans 8 cols) -->
+<div class="lg:col-span-8 p-6 lg:p-8 rounded-sm bg-white border border-slate-200 hover:border-slate-400 transition-colors flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<span class="font-label text-xs text-slate-500 font-semibold">FCK 20 • 25 • 30 • 35 • 40 • 50+ MPA</span>
+<div class="flex flex-col gap-2">
+<h3 class="font-headline text-2xl lg:text-3xl font-bold uppercase text-slate-950">Concreto Convencional &amp; Bombeável</h3>
+<p class="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                    Indicado para pilares, vigas, lajes maciças, nervuradas e radiers. O traço é ajustado à relação água/cimento, à exposição prevista e ao abatimento necessário para o bombeamento.
+                  </p>
+</div>
+<!-- Technical Specification Chips -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 pt-3 border-t border-slate-200">
+<div class="pt-3">
+<span class="font-label text-[10px] text-slate-500 block uppercase font-bold">BRITA</span>
+<span class="font-headline text-lg font-bold text-slate-950">0 e 1</span>
+</div>
+<div class="pt-3">
+<span class="font-label text-[10px] text-slate-500 block uppercase font-bold">SLUMP PADRÃO</span>
+<span class="font-headline text-lg font-bold text-slate-950">120 ± 20 mm</span>
+</div>
+<div class="pt-3">
+<span class="font-label text-[10px] text-slate-500 block uppercase font-bold">ADITIVOS</span>
+<span class="font-headline text-lg font-bold text-slate-950">Plastificantes</span>
+</div>
+<div class="pt-3">
+<span class="font-label text-[10px] text-slate-500 block uppercase font-bold">APLICAÇÃO</span>
+<span class="font-headline text-lg font-bold text-slate-950">Estrutural</span>
+</div>
+</div>
+</div>
+
+</div>
+<!-- CARD 2 (Spans 4 cols) -->
+<div class="lg:col-span-4 p-6 lg:p-8 rounded-sm bg-white border border-slate-200 hover:border-slate-400 transition-colors flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+
+<div class="flex flex-col gap-2">
+<h3 class="font-headline text-2xl font-bold uppercase text-slate-950">Bombeamento Estacionário &amp; Lança</h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                    Bombeamento estacionário e lança para concretagem em altura e terrenos de difícil acesso, conforme a disponibilidade confirmada na cotação. O bombeamento reduz o manuseio manual e o risco de segregação durante a elevação.
+                  </p>
+</div>
+<div class="pt-3 border-t border-slate-200 flex flex-col gap-1">
+<span class="font-label text-[10px] text-slate-500 uppercase font-bold">Equipamento</span>
+<span class="text-sm text-slate-800 font-semibold">Bomba estacionária e lança, conforme projeto e disponibilidade.</span>
+</div>
+</div>
+
+</div>
+<!-- CARD 3 (Spans 6 cols) -->
+<div class="lg:col-span-6 p-6 lg:p-8 rounded-sm bg-white border border-slate-200 hover:border-slate-400 transition-colors flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+
+<div class="flex flex-col gap-2">
+<h3 class="font-headline text-2xl font-bold uppercase text-slate-950">Piso Industrial &amp; Nivelamento a Laser</h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                    Indicado para galpões logísticos, estacionamentos e centros de distribuição. Formulação com fibras sintéticas ou de aço para controle de fissuras, resistência ao tráfego de empilhadeiras e controle de retração plástica.
+                  </p>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-600 pt-1">
+<div class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">done_all</span>
+<span>Fibras Micro &amp; Macro</span>
+</div>
+<div class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">done_all</span>
+<span>Tolerância Planicidade FF/FL</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="font-label text-xs text-slate-500">Galpões, Pátios e Docas</span>
+<span class="inline-flex items-center gap-1.5 text-slate-700 font-label text-xs uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[16px] text-blue-700">shield</span> Fibras Estruturais
+</span>
+</div>
+</div>
+<!-- CARD 4 (Spans 6 cols) -->
+<div class="lg:col-span-6 p-6 lg:p-8 rounded-sm bg-white border border-slate-200 hover:border-slate-400 transition-colors flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+
+<div class="flex flex-col gap-2">
+<h3 class="font-headline text-2xl font-bold uppercase text-slate-950">Concreto Auto-Adensável (CAA) &amp; CAD</h3>
+<p class="text-sm text-slate-600 leading-relaxed">
+                    Fluidez por gravidade que preenche as formas sem vibradores, indicada para ferragens densas e geometrias complexas. Produz superfícies lisas com redução de nichos de concretagem (bicheiras), diminuindo retrabalhos de acabamento.
+                  </p>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-600 pt-1">
+<div class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">done_all</span>
+<span>Slump Flow &gt; 650 mm</span>
+</div>
+<div class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-blue-700 text-[18px]">done_all</span>
+<span>Acabamento Aparente</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+<span class="font-label text-xs text-slate-500">Concreto Arquitetônico</span>
+<span class="inline-flex items-center gap-1.5 text-slate-700 font-label text-xs uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[16px] text-blue-700">auto_fix_high</span> Acabamento Aparente
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== RIGOR TÉCNICO & DIFERENCIAIS ==================== -->
+<section class="w-full py-20 bg-[#F8FAFC] relative overflow-hidden border-y border-slate-200" id="diferenciais">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="flex flex-col max-w-3xl gap-2 mb-12">
+<h2 class="font-headline text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-slate-950">
+              RIGOR TÉCNICO E CONTROLE DE PROCESSO
+            </h2>
+<p class="text-sm md:text-base text-slate-600">
+              Controle de dosagem, registro por lote e rastreabilidade do traço, para dar ao seu engenheiro a base de conferência da estrutura.
+            </p>
+</div>
+<!-- 3 Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="border-t border-slate-300 pt-6 flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<h3 class="font-headline text-xl font-bold uppercase text-slate-950">Controle de Dosagem</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  Pesagem e dosagem conferidas a cada lote, com registro do traço para conferência.
+                </p>
+</div>
+<div class="font-label text-[11px] text-slate-500 font-medium">
+                Referência: NBR 7212
+              </div>
+</div>
+
+<div class="border-t border-slate-300 pt-6 flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<h3 class="font-headline text-xl font-bold uppercase text-slate-950">Corpos de Prova &amp; Rompimento</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  O protocolo de amostragem e ensaio é definido em contrato; consulte a disponibilidade de laudo para a sua obra.
+                </p>
+</div>
+<div class="font-label text-[11px] text-slate-500 font-medium">
+                Laudo sob consulta
+              </div>
+</div>
+
+<div class="border-t border-slate-300 pt-6 flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<h3 class="font-headline text-xl font-bold uppercase text-slate-950">Flexibilidade de Escopo</h3>
+<p class="text-xs text-slate-600 leading-relaxed">
+                  Atendimento desde lajes residenciais até obras de maior volume, conforme a agenda de entrega para a data da concretagem.
+                </p>
+</div>
+<div class="font-label text-[11px] text-slate-500 font-medium">
+                Escopo conforme a obra
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== INTERACTIVE CALCULADORA DE VOLUME ==================== -->
+<section class="w-full py-20 lg:py-28 relative bg-[#FFFFFF]" id="calculadora">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Tool Description -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-3">
+<h2 class="font-headline text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-slate-950">
+                  CALCULADORA DE VOLUME DE CONCRETO
+                </h2>
+<p class="text-sm md:text-base text-slate-600 leading-relaxed">
+                  Evite desperdício ou paralisação de concretagem por falta de material. Calcule a cubagem geométrica da sua estrutura com margem para deformação de formas e perdas operacionais.
+                </p>
+<div class="mt-3 p-4 rounded-sm bg-slate-50 border border-slate-200 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 font-label text-xs uppercase text-slate-900 font-bold">
+<span class="material-symbols-outlined text-[18px] text-blue-700">info</span>
+<span>Por que adicionar margem de segurança?</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+                    Estruturas de madeira e escoramentos cedem milimetricamente com o peso próprio do concreto úmido (~2.400 kg/m³). Uma margem técnica de 5% a 10% protege contra falta de carga na etapa final de nivelamento.
+                  </p>
+</div>
+</div>
+<div class="p-4 rounded-sm bg-slate-100 border border-slate-200 flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-900 text-[24px]">local_shipping</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase text-slate-500 font-bold">Referência de carga</span>
+<span class="text-xs text-slate-800 font-semibold">8,0 m³ por viagem, confirmado na cotação</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Console -->
+<div class="lg:col-span-7 p-0">
+<!-- Element Type Switcher Tabs -->
+<div class="flex flex-col gap-1.5 mb-5">
+<span class="font-label text-xs uppercase text-slate-700 font-bold">1. Selecione o Tipo de Estrutura</span>
+<div class="grid grid-cols-3 gap-1.5 p-1 rounded-sm bg-slate-100 border border-slate-200" role="tablist" aria-label="Tipo de estrutura">
+<button aria-controls="calc-fields" aria-selected="true" class="calc-tab py-2.5 px-2 rounded-sm font-label text-xs uppercase tracking-wider text-center transition-all bg-[#0F172A] text-white font-bold" id="btn-laje" onclick="setStructureType('laje')" role="tab" tabindex="0" type="button">
+                    Laje / Piso
+                  </button>
+<button aria-controls="calc-fields" aria-selected="false" class="calc-tab py-2.5 px-2 rounded-sm font-label text-xs uppercase tracking-wider text-center transition-all text-slate-600 hover:text-slate-900" id="btn-viga" onclick="setStructureType('viga')" role="tab" tabindex="-1" type="button">
+                    Viga / Pilar
+                  </button>
+<button aria-controls="calc-fields" aria-selected="false" class="calc-tab py-2.5 px-2 rounded-sm font-label text-xs uppercase tracking-wider text-center transition-all text-slate-600 hover:text-slate-900" id="btn-radier" onclick="setStructureType('radier')" role="tab" tabindex="-1" type="button">
+                    Fundação / Radier
+                  </button>
+</div>
+</div>
+<!-- Dynamic Input Fields -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5" id="calc-fields" role="tabpanel" aria-labelledby="btn-laje">
+<!-- Dimensão 1 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label text-xs uppercase text-slate-600 font-semibold" for="input-dim1" id="lbl-dim1">Comprimento (m)</label>
+<span class="font-label text-xs text-slate-900 font-bold" id="val-dim1-display">10,00 m</span>
+</div>
+<input class="w-full h-12 px-3.5 rounded-sm bg-slate-50 border border-slate-300 text-slate-900 font-body text-base font-semibold focus:outline-none focus:border-slate-900 focus:bg-white focus:ring-1 focus:ring-slate-900" id="input-dim1" aria-describedby="calc-error" max="100" min="0.1" oninput="calculateConcrete()" step="0.1" type="number" value="10.0"/>
+</div>
+<!-- Dimensão 2 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label text-xs uppercase text-slate-600 font-semibold" for="input-dim2" id="lbl-dim2">Largura (m)</label>
+<span class="font-label text-xs text-slate-900 font-bold" id="val-dim2-display">8,00 m</span>
+</div>
+<input class="w-full h-12 px-3.5 rounded-sm bg-slate-50 border border-slate-300 text-slate-900 font-body text-base font-semibold focus:outline-none focus:border-slate-900 focus:bg-white focus:ring-1 focus:ring-slate-900" id="input-dim2" aria-describedby="calc-error" max="100" min="0.1" oninput="calculateConcrete()" step="0.1" type="number" value="8.0"/>
+</div>
+<!-- Dimensão 3 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label text-xs uppercase text-slate-600 font-semibold" for="input-dim3" id="lbl-dim3">Espessura (m)</label>
+<span class="font-label text-xs text-slate-900 font-bold" id="val-dim3-display">0,12 m</span>
+</div>
+<input class="w-full h-12 px-3.5 rounded-sm bg-slate-50 border border-slate-300 text-slate-900 font-body text-base font-semibold focus:outline-none focus:border-slate-900 focus:bg-white focus:ring-1 focus:ring-slate-900" id="input-dim3" aria-describedby="calc-error" max="5.0" min="0.05" oninput="calculateConcrete()" step="0.01" type="number" value="0.12"/>
+</div>
+</div>
+<!-- Margem de Segurança Selector -->
+<div class="flex flex-col gap-1.5 mb-6">
+<span class="font-label text-xs uppercase text-slate-700 font-bold">2. Margem Técnica de Segurança</span>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-slate-50 border border-slate-200 cursor-pointer hover:border-slate-400 transition-colors">
+<input class="text-slate-900 focus:ring-0 accent-slate-900" name="margem" onchange="calculateConcrete()" type="radio" value="0"/>
+<span class="font-label text-xs text-slate-700 font-medium">Sem margem (0%)</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-blue-50 border border-blue-200 cursor-pointer hover:border-blue-300 transition-colors">
+<input checked="" class="text-slate-900 focus:ring-0 accent-slate-900" name="margem" onchange="calculateConcrete()" type="radio" value="0.05"/>
+<span class="font-label text-xs text-slate-950 font-bold">+5% recomendado</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-sm bg-slate-50 border border-slate-200 cursor-pointer hover:border-slate-400 transition-colors">
+<input class="text-slate-900 focus:ring-0 accent-slate-900" name="margem" onchange="calculateConcrete()" type="radio" value="0.10"/>
+<span class="font-label text-xs text-slate-700 font-medium">+10% alta</span>
+</label>
+</div>
+</div>
+<!-- Output Card -->
+<p class="hidden mb-3 text-xs text-[#93000A] font-semibold" id="calc-error" role="alert"></p>
+<div class="p-5 rounded-sm bg-[#0F172A] text-white mb-6" role="status" aria-live="polite" aria-atomic="true">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-wider text-slate-400 font-semibold">Volume Total Estimado</span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-headline text-5xl lg:text-6xl text-white font-extrabold leading-none" id="output-volume">10,08</span>
+<span class="font-headline text-3xl text-white font-bold">m³</span>
+</div>
+<span class="font-label text-xs text-slate-300 mt-1" id="output-breakdown">9,60 m³ geométrico + 0,48 m³ (5% reserva técnica)</span>
+</div>
+<div class="flex flex-col items-start md:items-end justify-center">
+<span class="font-label text-xs uppercase text-slate-400 font-semibold">Carga estimada</span>
+<div class="inline-flex items-center gap-2 mt-1 px-3.5 py-1.5 rounded-sm bg-slate-800 border border-slate-700 text-white font-label text-xs">
+<span class="material-symbols-outlined text-[18px] text-blue-400">local_shipping</span>
+<span class="font-bold text-white" id="output-trucks">2 betoneiras (8 m³)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full h-14 rounded-sm bg-[#0F2744] text-white font-label text-xs sm:text-sm uppercase tracking-wider font-extrabold transition-colors duration-200 hover:bg-[#1E3A8A] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#0F2744] flex items-center justify-center gap-2 border border-[#0A192F]" id="btn-send-whatsapp" onclick="sendCalculatedQuote()" type="button">
+<svg class="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Enviar Cálculo Direto para Orçamento no WhatsApp
+               </button>
+<div class="hidden mt-3 p-4 rounded-sm border border-[#BA1A1A]/40 bg-[#FFF5F5] flex flex-col gap-2" id="quote-fallback" role="alert">
+<p class="font-label text-xs uppercase text-[#93000A] font-bold">O WhatsApp não abriu automaticamente</p>
+<p class="text-xs text-[#93000A] leading-relaxed">Você está offline ou o navegador bloqueou a nova guia. Envie a mensagem manualmente pelo número abaixo:</p>
+<p class="font-label text-sm text-[#93000A] font-bold">+55 (81) 99765-5707</p>
+<button class="inline-flex items-center justify-center gap-2 h-11 px-4 rounded-sm bg-[#0F2744] text-white font-label text-xs uppercase tracking-wider font-bold hover:bg-[#1E3A8A] transition-colors" id="btn-copy-quote" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span> Copiar mensagem do orçamento
+</button>
+<p class="hidden font-label text-xs text-[#93000A] font-bold" id="quote-copy-status" role="status">Mensagem copiada para a área de transferência.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== DISPONIBILIDADE DE ENTREGA ==================== -->
+<section class="w-full py-20 bg-[#F8FAFC] relative border-y border-slate-200" id="regiao">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-10">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h2 class="font-headline text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-slate-950">
+                DISPONIBILIDADE DE ENTREGA
+              </h2>
+<p class="text-sm md:text-base text-slate-600">
+                A cobertura é confirmada obra a obra. Informe o endereço, o volume e a data para verificarmos rota, bomba e janela de concretagem.
+              </p>
+</div>
+<div class="px-4 py-2 rounded-sm bg-white border border-slate-300 flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
+<span class="font-label text-xs text-slate-900 font-bold uppercase tracking-wider">Disponibilidade sob consulta</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-7 bg-white border border-slate-200 p-6 lg:p-8">
+<h3 class="font-headline text-xl font-bold uppercase text-slate-950 mb-6">O que informar na consulta</h3>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="border-t border-slate-300 pt-4">
+<span class="font-label text-[11px] uppercase text-slate-500 font-bold">Endereço da obra</span>
+<p class="text-sm text-slate-700 mt-1">Rua, bairro e município para verificarmos a rota.</p>
+</div>
+<div class="border-t border-slate-300 pt-4">
+<span class="font-label text-[11px] uppercase text-slate-500 font-bold">Volume estimado</span>
+<p class="text-sm text-slate-700 mt-1">Use a calculadora acima ou informe a cubagem do projeto.</p>
+</div>
+<div class="border-t border-slate-300 pt-4">
+<span class="font-label text-[11px] uppercase text-slate-500 font-bold">Data e janela</span>
+<p class="text-sm text-slate-700 mt-1">A agenda de entrega é confirmada na cotação.</p>
+</div>
+</div>
+<p class="text-xs text-slate-500 mt-6 pt-4 border-t border-slate-200">Não publicamos uma lista fixa de cidades: a disponibilidade depende da rota, do volume e da agenda de entrega.</p>
+</div>
+<div class="lg:col-span-5 bg-[#0F2744] text-white p-6 lg:p-8 flex flex-col justify-between gap-6">
+<div>
+<h3 class="font-headline text-2xl font-bold uppercase">Verifique a disponibilidade para a sua obra</h3>
+<p class="text-sm text-slate-300 mt-2">A resposta é dada pelo WhatsApp com a confirmação de rota, bomba e janela de concretagem.</p>
+</div>
+<a class="inline-flex items-center justify-center h-12 px-5 bg-white text-[#0F2744] font-label text-xs uppercase tracking-wider font-extrabold hover:bg-slate-100 transition-colors" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20entrega%20para%20a%20minha%20obra%20em%20Pernambuco." rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 fill-[#0F2744]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar disponibilidade
+        </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Calculator Logic -->
+<script>
+      const structureMeta = {
+        laje: {
+          labels: ['Comprimento (m)', 'Largura (m)', 'Espessura (m)'],
+          steps: ['0.1', '0.1', '0.01'],
+          min: ['0.1', '0.1', '0.05'],
+          max: ['100', '100', '5.0']
+        },
+        viga: {
+          labels: ['Comprimento Total (m)', 'Base / Largura (m)', 'Altura / Profundidade (m)'],
+          steps: ['0.1', '0.05', '0.05'],
+          min: ['0.1', '0.05', '0.05'],
+          max: ['100', '5.0', '5.0']
+        },
+        radier: {
+          labels: ['Comprimento do Terreno (m)', 'Largura do Terreno (m)', 'Altura do Radier (m)'],
+          steps: ['0.1', '0.1', '0.05'],
+          min: ['0.1', '0.1', '0.05'],
+          max: ['100', '100', '5.0']
+        }
+      };
+
+      const calcState = {
+        laje: { d1: '10.0', d2: '8.0', d3: '0.12' },
+        viga: { d1: '25.0', d2: '0.20', d3: '0.40' },
+        radier: { d1: '12.0', d2: '10.0', d3: '0.25' }
+      };
+
+      let currentStructure = 'laje';
+
+      const formatNumber = (value, decimals = 2) =>
+        value.toLocaleString('pt-BR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+      const formatInteger = (value) => value.toLocaleString('pt-BR');
+
+      function getInputs() {
+        return [
+          document.getElementById('input-dim1'),
+          document.getElementById('input-dim2'),
+          document.getElementById('input-dim3')
+        ];
+      }
+
+      function saveCurrentValues() {
+        const inputs = getInputs();
+        calcState[currentStructure] = {
+          d1: inputs[0].value,
+          d2: inputs[1].value,
+          d3: inputs[2].value
+        };
+      }
+
+      function setStructureType(type) {
+        if (type === currentStructure) return;
+        saveCurrentValues();
+        currentStructure = type;
+
+        const meta = structureMeta[type];
+        const inputs = getInputs();
+        const labels = [
+          document.getElementById('lbl-dim1'),
+          document.getElementById('lbl-dim2'),
+          document.getElementById('lbl-dim3')
+        ];
+
+        labels.forEach((label, index) => {
+          label.textContent = meta.labels[index];
+        });
+
+        inputs.forEach((input, index) => {
+          input.value = calcState[type]['d' + (index + 1)];
+          input.step = meta.steps[index];
+          input.min = meta.min[index];
+          input.max = meta.max[index];
+        });
+
+        document.querySelectorAll('.calc-tab').forEach((button) => {
+          const isActive = button.id === 'btn-' + type;
+          button.className = isActive
+            ? 'calc-tab py-2.5 px-2 rounded-sm font-label text-xs uppercase tracking-wider text-center transition-all bg-[#0F172A] text-white font-bold'
+            : 'calc-tab py-2.5 px-2 rounded-sm font-label text-xs uppercase tracking-wider text-center transition-all text-slate-600 hover:text-slate-900';
+          button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          button.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+
+        document.getElementById('calc-fields').setAttribute('aria-labelledby', 'btn-' + type);
+        calculateConcrete();
+      }
+
+      function calculateConcrete() {
+        const inputs = getInputs();
+        const errorEl = document.getElementById('calc-error');
+        const sendButton = document.getElementById('btn-send-whatsapp');
+        const values = inputs.map((input) => parseFloat(input.value));
+        let hasError = false;
+
+        inputs.forEach((input, index) => {
+          const value = values[index];
+          const min = parseFloat(input.min);
+          const max = parseFloat(input.max);
+          const invalid = !Number.isFinite(value) || value < min || value > max;
+          input.classList.toggle('input-invalid', invalid);
+          input.setAttribute('aria-invalid', invalid ? 'true' : 'false');
+          if (invalid) hasError = true;
+        });
+
+        const displays = ['val-dim1-display', 'val-dim2-display', 'val-dim3-display'];
+        displays.forEach((id, index) => {
+          document.getElementById(id).textContent = Number.isFinite(values[index])
+            ? formatNumber(values[index]) + ' m'
+            : '—';
+        });
+
+        if (hasError) {
+          const problems = [];
+          inputs.forEach((input, index) => {
+            const value = values[index];
+            const min = parseFloat(input.min);
+            const max = parseFloat(input.max);
+            if (!Number.isFinite(value) || value < min || value > max) {
+              const label = document.getElementById('lbl-dim' + (index + 1)).textContent.replace(/\s*\(m\)\s*$/, '');
+              problems.push(label + ': entre ' + formatNumber(min) + ' e ' + formatNumber(max) + ' m');
+            }
+          });
+          errorEl.textContent = 'Dimensão fora dos limites — ' + problems.join(' · ') + '.';
+          errorEl.classList.remove('hidden');
+          document.getElementById('output-volume').textContent = '—';
+          document.getElementById('output-breakdown').textContent = 'Aguardando dimensões válidas.';
+          document.getElementById('output-trucks').textContent = '—';
+          sendButton.disabled = true;
+          return;
+        }
+
+        errorEl.classList.add('hidden');
+        sendButton.disabled = false;
+
+        const d1 = values[0];
+        const d2 = values[1];
+        const d3 = values[2];
+        const geoVolume = d1 * d2 * d3;
+        const marginRadio = document.querySelector('input[name="margem"]:checked');
+        const marginPercent = marginRadio ? parseFloat(marginRadio.value) : 0.05;
+        const totalVolume = geoVolume * (1 + marginPercent);
+        const volumeRounded = Math.round(totalVolume * 100) / 100;
+
+        document.getElementById('output-volume').textContent = formatNumber(volumeRounded);
+        document.getElementById('output-breakdown').textContent =
+          formatNumber(geoVolume) + ' m³ geométrico + ' + formatNumber(totalVolume - geoVolume) + ' m³ (' + (marginPercent * 100).toFixed(0) + '% reserva técnica)';
+
+        const trucks = Math.ceil(volumeRounded / 8.0);
+        const truckText = trucks === 1 ? '1 betoneira (8 m³)' : formatInteger(trucks) + ' betoneiras (8 m³)';
+        document.getElementById('output-trucks').textContent = truckText;
+      }
+
+      function buildQuoteMessage() {
+        const structName = currentStructure === 'laje' ? 'Laje/Piso' : (currentStructure === 'viga' ? 'Vigas/Pilares' : 'Fundação/Radier');
+        const dimension = (index) => formatNumber(parseFloat(document.getElementById('input-dim' + index).value));
+
+        return (
+          'Olá, CONCRETEX! Calculei o volume da minha obra pelo site:\n' +
+          '• Estrutura: ' + structName + '\n' +
+          '• Dimensões: ' + dimension(1) + 'm × ' + dimension(2) + 'm × ' + dimension(3) + 'm\n' +
+          '• Volume Estimado: ' + document.getElementById('output-volume').textContent + ' m³\n' +
+          'Gostaria de um orçamento formal com indicação de bomba e frete para minha obra em Pernambuco.'
+        );
+      }
+
+      function waLink(message) {
+        return 'https://wa.me/5581997655707?text=' + encodeURIComponent(message);
+      }
+
+      let lastQuoteAttempt = 0;
+
+      function sendCalculatedQuote() {
+        const button = document.getElementById('btn-send-whatsapp');
+        if (button.disabled) return;
+        const now = Date.now();
+        if (now - lastQuoteAttempt < 1500) return;
+        lastQuoteAttempt = now;
+
+        const fallback = document.getElementById('quote-fallback');
+
+        if (!navigator.onLine) {
+          fallback.classList.remove('hidden');
+          return;
+        }
+
+        const opened = window.open(waLink(buildQuoteMessage()), '_blank', 'noopener');
+        if (opened) {
+          fallback.classList.add('hidden');
+        } else {
+          fallback.classList.remove('hidden');
+        }
+      }
+
+      async function copyQuoteMessage() {
+        const status = document.getElementById('quote-copy-status');
+        const message = buildQuoteMessage();
+        let copied = false;
+
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(message);
+            copied = true;
+          }
+        } catch (error) {
+          copied = false;
+        }
+
+        if (!copied) {
+          const textarea = document.createElement('textarea');
+          textarea.value = message;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            copied = document.execCommand('copy');
+          } catch (error) {
+            copied = false;
+          }
+          document.body.removeChild(textarea);
+        }
+
+        status.textContent = copied
+          ? 'Mensagem copiada para a área de transferência.'
+          : 'Não foi possível copiar. Anote o número acima e digite a mensagem manualmente.';
+        status.classList.remove('hidden');
+      }
+
+      document.getElementById('btn-copy-quote').addEventListener('click', copyQuoteMessage);
+
+      document.querySelectorAll('.calc-tab').forEach((button, index, buttons) => {
+        button.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+          event.preventDefault();
+          const direction = event.key === 'ArrowRight' ? 1 : -1;
+          const target = buttons[(index + direction + buttons.length) % buttons.length];
+          target.focus();
+          target.click();
+        });
+      });
+
+      calculateConcrete();
+</script>
+</main>
+<!-- ==================== FLOATING WHATSAPP CTA ==================== -->
+<aside class="fixed bottom-6 right-6 z-50">
+<a aria-label="Solicitar orçamento via WhatsApp" class="flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-[0_2px_8px_rgba(15,23,42,0.2)] hover:bg-[#20BA5A] active:scale-95 transition-colors duration-200 border-2 border-white" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20concreto." rel="noopener noreferrer" target="_blank">
+<svg class="w-8 h-8 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+</svg>
+</a>
+</aside>
+<!-- ==================== FOOTER ==================== -->
+<footer class="w-full bg-[#0F172A] border-t border-slate-800 text-slate-300 pt-16 pb-10">
+<div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<img alt="CONCRETEX" class="h-8 w-auto object-contain brightness-0 invert opacity-95" height="168" src="imagensconcretex/logo-web.png" width="512"/>
+</div>
+<p class="text-xs text-slate-400 leading-relaxed">
+            Concreto usinado com traço definido pelo seu engenheiro, controle de dosagem por lote e atendimento a obras em Pernambuco.
+          </p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-wider text-white font-bold">Normas de Referência</span>
+<ul class="flex flex-col gap-2 text-xs text-slate-400">
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-500 text-[16px]">description</span><span>NBR 7212 — Preparo e Controle de Concreto</span></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-500 text-[16px]">description</span><span>NBR 6118 — Estruturas de Concreto Armado</span></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-500 text-[16px]">description</span><span>NBR 8953 — Classes de Resistência fck</span></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-500 text-[16px]">description</span><span>NBR 12655 — Ensaios de Amostragem e Cura</span></li>
+</ul>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-wider text-white font-bold">Navegação Rápida</span>
+<ul class="flex flex-col gap-2 text-xs text-slate-400">
+<li><a class="hover:text-white transition-colors" href="#servicos">Serviços &amp; Traços de Concreto</a></li>
+<li><a class="hover:text-white transition-colors" href="#diferenciais">Diferenciais e Rigor Técnico</a></li>
+<li><a class="hover:text-white transition-colors" href="#calculadora">Calculadora de Volume (m³)</a></li>
+<li><a class="hover:text-white transition-colors" href="#regiao">Disponibilidade de Entrega</a></li>
+<li><a class="hover:text-white transition-colors" href="https://wa.me/5581997655707?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20concreto." rel="noopener noreferrer" target="_blank">Atendimento WhatsApp</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label text-xs uppercase tracking-wider text-white font-bold">Canais Oficiais</span>
+<div class="flex flex-col gap-2 text-xs text-slate-400">
+<a class="font-label text-xs text-white font-semibold hover:text-slate-300 transition-colors" href="mailto:contato@concretex.com.br">contato@concretex.com.br</a>
+<p>Atendimento a construtoras, engenheiros e obras residenciais.</p>
+<p class="text-slate-500">Pernambuco • Brasil</p>
+</div>
+</div>
+</div>
+<div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 font-label text-xs text-slate-500">
+<p>© 2026 CONCRETEX TECNOLOGIA EM CONCRETO LTDA. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const menuIcon = document.getElementById('menu-icon');
+
+  function setMenuOpen(open) {
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    menuIcon.textContent = open ? 'close' : 'menu';
+    mobileNav.classList.toggle('hidden', !open);
+  }
+
+  menuToggle.addEventListener('click', () => {
+    setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  mobileNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1280 && menuToggle.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+    }
+  });
+</script>
+</body></html>
