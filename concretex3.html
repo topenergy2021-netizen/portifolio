@@ -1,0 +1,821 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script>document.documentElement.classList.add('js-reveal');</script>
+<title>Concretex | Soluções em Concreto Usinado e Engenharia</title>
+<meta name="description" content="Concretex: concreto usinado, bombeamento estrutural, pisos industriais e controle tecnológico em Caruaru e região. Solicite um orçamento.">
+<!-- Fontes Google Montserrat e Open Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="512x512" href="concretex3/favicon.png">
+<link rel="shortcut icon" type="image/png" href="concretex3/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="concretex3/apple-touch-icon.png">
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#001e42',
+              dark: '#00132b',
+              blue: '#00529b',
+              blueDark: '#003d73',
+              vibrant: '#0066cc',
+              lightBlue: '#00a3e0',
+              accent: '#f39200',
+              accentHover: '#d97d00',
+              lightBg: '#f8fafc'
+            }
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Stylesheets -->
+<style data-purpose="custom-decorations">
+    .clip-parallelogram {
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    }
+    .clip-geometric-badge {
+      clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    }
+    .frosted-glass {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(0, 19, 43, 0.45) 0%, rgba(0, 30, 66, 0.6) 100%);
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-slide.is-active { opacity: 1; }
+    @keyframes heroKenBurns {
+      0%   { transform: scale(1.04) translate3d(0, 0, 0); }
+      100% { transform: scale(1.12) translate3d(-1.4%, -1.2%, 0); }
+    }
+    .hero-slide img {
+      animation: heroKenBurns 18s ease-in-out infinite alternate;
+      transform-origin: 60% 45%;
+    }
+    :root { --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); }
+    html.js-reveal .reveal {
+      opacity: 0;
+      transform: translate3d(0, 24px, 0);
+      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+    html.js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+    @keyframes heroUp {
+      from { opacity: 0; transform: translate3d(0, 28px, 0); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-anim {
+      opacity: 0;
+      animation: heroUp 1s var(--ease-out-expo) forwards;
+      animation-delay: var(--hero-delay, 0ms);
+    }
+    .link-underline { position: relative; }
+    .link-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.45s var(--ease-out-expo);
+    }
+    .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
+    @keyframes waPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+      70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .wa-float {
+      animation: waPulse 2.4s ease-out infinite;
+      bottom: max(1.25rem, env(safe-area-inset-bottom));
+      right: max(1.25rem, env(safe-area-inset-right));
+      transition: transform 0.45s var(--ease-out-expo), background-color 0.3s, border-color 0.3s;
+    }
+    .wa-float:hover { transform: translateY(-3px); }
+    @media (min-width: 640px) {
+      .wa-float {
+        bottom: max(2rem, env(safe-area-inset-bottom));
+        right: max(2rem, env(safe-area-inset-right));
+      }
+    }
+    section[id], footer[id] { scroll-margin-top: 5.5rem; }
+    ::selection { background: #00529b; color: #ffffff; }
+    input, select, textarea { caret-color: #00529b; }
+    body { overflow-x: clip; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html.js-reveal .reveal, .hero-anim {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+<!-- END: Stylesheets -->
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased overflow-x-hidden">
+<a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:text-brand-navy focus:px-4 focus:py-2 focus:rounded-lg font-bold shadow-lg">Pular para o conteúdo</a>
+<!-- BEGIN: HeaderNav -->
+<header id="main-header" class="sticky top-0 z-50 bg-brand-navy border-b border-blue-900/60 shadow-lg transition-colors duration-300" data-purpose="main-navigation-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center space-x-2 py-1.5" href="#inicio" title="Concretex Home">
+<img alt="Concretex Concreto Usinado" class="h-8 md:h-10 w-auto object-contain brightness-0 invert drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]" src="concretex3/logo-web.png" width="512" height="168" decoding="async">
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold text-slate-200 uppercase tracking-wider">
+<a class="text-white font-bold transition duration-200 link-underline" href="#inicio">Início</a>
+<a class="hover:text-brand-accent transition duration-200 link-underline" href="#sobre">Sobre a Concretex</a>
+<a class="hover:text-brand-accent transition duration-200 py-2" href="#servicos">Soluções</a>
+<a class="hover:text-brand-accent transition duration-200 link-underline" href="#obras">Projetos &amp; Obras</a>
+<a class="hover:text-brand-accent transition duration-200 link-underline" href="#depoimentos">Depoimentos</a>
+<a class="hover:text-brand-accent transition duration-200 link-underline" href="#contato">Fale Conosco</a>
+</nav>
+<!-- Fast Action CTA -->
+<div class="hidden sm:flex items-center space-x-3">
+<a class="bg-brand-navy hover:bg-brand-dark text-white font-bold px-4 py-2 rounded text-xs uppercase tracking-wider transition transform hover:-translate-y-0.5 shadow-md flex items-center gap-2 border border-slate-700" href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20plant%C3%A3o%20t%C3%A9cnico%20da%20Concretex" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-whatsapp text-sm"></i>
+<span>Solicite o Orçamento</span>
+</a>
+</div>
+</div>
+</header>
+<!-- END: HeaderNav -->
+<main id="conteudo">
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-[580px] lg:h-[680px] flex items-center justify-start overflow-hidden bg-slate-900" data-purpose="hero-banner" id="inicio">
+<!-- Background Slides with Real Operational Fleet -->
+<div class="absolute inset-0 z-0" id="hero-slides" aria-live="off">
+<div class="hero-slide is-active">
+<img alt="" class="w-full h-full object-cover object-center" src="concretex3/hero-640.webp" width="640" height="435" fetchpriority="high" decoding="async">
+</div>
+<div class="hero-slide">
+<img alt="" class="w-full h-full object-cover object-center" src="concretex3/hero3-1600.webp" width="1600" height="900" loading="lazy" decoding="async">
+</div>
+<div class="hero-slide">
+<img alt="" class="w-full h-full object-cover object-center" src="concretex3/pisos e pavimentos industriais.jpg" width="1376" height="768" loading="lazy" decoding="async">
+</div>
+<div class="hero-slide">
+<img alt="" class="w-full h-full object-cover object-center" src="concretex3/concreto usinado.jpg" width="1376" height="768" loading="lazy" decoding="async">
+</div>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<!-- Floating Card Inspired by Reference Layout -->
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+<div class="max-w-xl frosted-glass p-8 md:p-10 rounded-2xl shadow-2xl border border-white/60 relative hero-anim" style="--hero-delay:150ms">
+<!-- Live Play / Video Indicator on card upper corner -->
+<div class="inline-block bg-[#001e42] text-blue-200 border border-blue-800 text-[10px] font-extrabold uppercase px-3 py-1 rounded tracking-widest mb-3">
+            Líder em Concreto Dosado em Central
+          </div>
+<h1 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#001e42] leading-tight mb-3">
+            Com a Concretex nenhum construtor está só
+          </h1>
+<p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+            Do alicerce às estruturas mais complexas: pontualidade impecável, rastreabilidade laboratorial e tecnologia de bombeamento para sua obra render o máximo.
+          </p>
+</div>
+</div>
+<!-- Slide indicators -->
+<div id="hero-dots" class="absolute z-20 bottom-5 left-4 sm:left-6 lg:left-8 flex items-center gap-2" role="group" aria-label="Imagens do hero">
+<button type="button" aria-label="Mostrar imagem 1 de 4" aria-current="true" class="w-2.5 h-2.5 rounded-full bg-white transition-colors cursor-pointer hover:bg-brand-lightBlue"></button>
+<button type="button" aria-label="Mostrar imagem 2 de 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-colors cursor-pointer hover:bg-brand-lightBlue"></button>
+<button type="button" aria-label="Mostrar imagem 3 de 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-colors cursor-pointer hover:bg-brand-lightBlue"></button>
+<button type="button" aria-label="Mostrar imagem 4 de 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-colors cursor-pointer hover:bg-brand-lightBlue"></button>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: MetricsRibbon -->
+<section class="relative z-20 -mt-10 sm:-mt-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="metrics-summary">
+<div class="reveal bg-gradient-to-r from-[#001e42] via-[#004b91] to-[#001e42] rounded-2xl shadow-2xl p-6 sm:p-10 border border-blue-400/20 relative overflow-hidden">
+<!-- Geometric Yellow Accent Lines inspired by reference -->
+<div class="absolute -top-12 -left-12 w-32 h-32 bg-white/20 opacity-20 rounded-full blur-2xl"></div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-lightBlue opacity-20 rounded-full blur-3xl"></div>
+<div class="relative z-10 text-center mb-8">
+<span class="inline-block w-12 h-1 bg-slate-200 mb-3 rounded-full"></span>
+<h2 class="text-white font-heading font-bold text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto uppercase tracking-wide">
+            Sistemas construtivos industrializados e soluções de engenharia para edificação e infraestrutura
+          </h2>
+</div>
+<!-- 3 Quantitative Big Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-blue-800/70 pt-2"><div class="flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
+<span class="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">15+</span>
+<span class="text-blue-100 text-sm font-medium mt-1">Anos de experiência e tradição sólida</span>
+</div>
+<div class="flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
+<span class="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">500k+</span>
+<span class="text-blue-100 text-sm font-medium mt-1">Metros cúbicos de concreto aplicados</span>
+</div>
+<div class="flex flex-col items-center justify-center px-4 pt-4 md:pt-0">
+<span class="font-heading font-black text-4xl sm:text-5xl text-white tracking-tight">100%</span>
+<span class="text-blue-100 text-sm font-medium mt-1">Controle tecnológico e pontualidade</span>
+</div></div>
+</div>
+</section>
+<!-- END: MetricsRibbon -->
+<!-- BEGIN: QuickServicesRibbon -->
+<section class="mt-8 py-4 bg-[#001633] text-white" data-purpose="horizontal-nav-bar">
+<div class="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="text-center font-heading font-bold text-lg sm:text-xl text-white mb-4">
+          Soluções e Serviços em Destaque
+        </h3>
+<div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold tracking-wide text-slate-300"><a class="hover:text-white flex items-center gap-2" href="#servicos"><i class="fa-solid fa-truck-droplet text-blue-300"></i> Concreto Usinado</a>
+<span class="text-slate-600 hidden sm:inline">•</span>
+<a class="hover:text-white flex items-center gap-2" href="#servicos"><i class="fa-solid fa-arrow-up-right-dots text-blue-300"></i> Bombeamento em Altura</a>
+<span class="text-slate-600 hidden sm:inline">•</span>
+<a class="hover:text-white flex items-center gap-2" href="#servicos"><i class="fa-solid fa-layer-group text-blue-300"></i> Pisos Industriais</a>
+<span class="text-slate-600 hidden sm:inline">•</span>
+<a class="hover:text-white flex items-center gap-2" href="#servicos"><i class="fa-solid fa-flask-vial text-blue-300"></i> Laboratório e Ensaios</a>
+<span class="text-slate-600 hidden sm:inline">•</span>
+<a class="hover:text-white flex items-center gap-2" href="#servicos"><i class="fa-solid fa-shield-halved text-blue-300"></i> Atendimento de Plantão</a></div>
+</div>
+</section>
+<!-- END: QuickServicesRibbon -->
+<!-- BEGIN: AboutSection -->
+<section class="py-20 bg-white" data-purpose="about-concretex" id="sobre">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" data-stagger="150">
+<!-- Image/Video Player Mockup (Hero2 Image) -->
+<div class="reveal lg:col-span-6 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 group">
+<img alt="Equipe Concretex aplicando concreto com mangote em laje" class="w-full h-[360px] sm:h-[420px] object-cover group-hover:scale-105 transition duration-500" src="concretex3/hero3.webp" srcset="concretex3/hero3-960.webp 960w, concretex3/hero3-1600.webp 1600w, concretex3/hero3.webp 2560w" sizes="(min-width: 1024px) 50vw, 100vw" width="2560" height="1440" loading="lazy" decoding="async">
+<!-- Video Play Overlay Icon -->
+<div class="absolute inset-0 bg-slate-900/30 flex items-center justify-center">
+<a class="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center text-brand-blue shadow-2xl hover:scale-110 transition duration-300 transform pl-1" href="#contato" aria-label="Falar com um especialista">
+<i class="fa-solid fa-play text-2xl text-brand-blue"></i>
+</a>
+</div>
+<!-- Quality Stamp -->
+<div class="absolute bottom-4 left-4 bg-brand-navy/90 text-white px-3 py-1.5 rounded-lg text-xs font-semibold backdrop-blur"><i class="fa-solid fa-circle-check text-cyan-300 mr-1"></i> Dosagem Computadorizada</div>
+</div>
+</div>
+<!-- Institutional Text Content -->
+<div class="reveal lg:col-span-6">
+<div class="flex items-center space-x-2 text-brand-blue font-bold text-sm uppercase tracking-wider mb-2">
+<span class="w-8 h-0.5 bg-[#001e42]"></span>
+<span>Engenharia &amp; Solidez</span>
+</div>
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-[#001e42] mb-6">
+              Quem somos?
+            </h2>
+<div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+<p>
+                A <strong>Concretex</strong> é uma empresa especializada em soluções integradas em concreto usinado, bombeamento estrutural e apoio de engenharia construtiva para obras civis, comerciais e de grande porte.
+              </p>
+<p>
+                Com uma moderna central de dosagem automática e frota própria de caminhões betoneiras e autobombas com mastro articulado, garantimos misturas homogêneas, respeitando os traços especificados em projeto com rigor técnico e ensaios tecnológicos diários.
+              </p>
+<p class="font-medium text-[#001e42]">
+                Nosso compromisso é assegurar que a sua obra nunca fique desabastecida, unindo agilidade de entrega, suporte técnico na concretagem e a máxima resistência por m³.
+              </p>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<a class="bg-brand-navy hover:bg-brand-dark text-white font-bold px-7 py-3 rounded-lg text-sm font-heading tracking-wide inline-block shadow-md transition border border-slate-700" href="#orcamento">
+                Conhecer Mais
+              </a>
+<div class="flex items-center space-x-2 text-xs text-slate-500">
+<i class="fa-solid fa-award text-xl text-brand-blue"></i>
+<span>Normas ABNT NBR 7212 e NBR 12655</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: SolutionsAndServicesSection -->
+<section class="py-20 bg-slate-50 border-t border-slate-200" data-purpose="service-catalog" id="servicos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+<div class="reveal lg:col-span-5">
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-[#001e42] mb-3">
+              Soluções e<br>serviços
+            </h2>
+<div class="w-16 h-1 bg-[#001e42] mb-4"></div>
+<p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Na <strong>Concretex</strong>, oferecemos um portfólio completo de concretos e serviços que otimizam o cronograma executivo, elevando a produtividade do canteiro e reduzindo perdas de materiais. Nosso foco é fornecer soluções feitas sob medida para cada tipo de esforço e geometria de laje.
+            </p>
+</div>
+<!-- Two Featured Cards Top Right -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" data-stagger="140">
+<!-- Service 1: Concreto Estrutural -->
+<div class="reveal relative rounded-2xl overflow-hidden shadow-lg group h-64 border border-slate-200">
+<img alt="Sistemas de Concreto Estrutural" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/concreto usinado.jpg" width="1376" height="768" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+<div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white mb-3 shadow-md">
+<i class="fa-solid fa-cubes-stacked text-xl"></i>
+</div>
+<h3 class="text-white font-heading font-bold text-lg">Concreto Usinado &amp; Estrutural</h3>
+<p class="text-slate-300 text-xs mt-1">Fck sob medida para pilares, vigas e fundações.</p>
+</div>
+</div>
+<!-- Service 2: Bombeamento em Altura -->
+<div class="reveal relative rounded-2xl overflow-hidden shadow-lg group h-64 border border-slate-200">
+<img alt="Caminhão bomba e concretagem urbana" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/serviços de bombeamento.jpg" width="1376" height="768" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+<div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white mb-3 shadow-md">
+<i class="fa-solid fa-code-branch text-xl rotate-90"></i>
+</div>
+<h3 class="text-white font-heading font-bold text-lg">Serviços de Bombeamento</h3>
+<p class="text-slate-300 text-xs mt-1">Autobombas com mastro para alta velocidade e alcance.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Three Horizontal Grid Cards Bottom -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-stagger="140">
+<!-- Service 3: Aplicação de Lajes e Pisos -->
+<div class="reveal relative rounded-2xl overflow-hidden shadow-lg group h-64 border border-slate-200">
+<img alt="Concreto para lajes e pisos industriais" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/pisos e pavimentos industriais.jpg" width="1376" height="768" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+<div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white mb-3 shadow-md">
+<i class="fa-solid fa-layer-group text-xl"></i>
+</div>
+<h3 class="text-white font-heading font-bold text-lg">Pisos &amp; Pavimentos Industriais</h3>
+<p class="text-slate-300 text-xs mt-1">Alta planicidade e resistências à abrasão com fibras.</p>
+</div>
+</div>
+<!-- Service 4: Ensaios Tecnológicos & Slump Test -->
+<div class="reveal relative rounded-2xl overflow-hidden shadow-lg group h-64 border border-slate-200">
+<img alt="Laboratório e controle de qualidade Concretex" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/controle tecnologico.jpg" width="1376" height="768" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+<div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white mb-3 shadow-md">
+<i class="fa-solid fa-shield-halved text-xl"></i>
+</div>
+<h3 class="text-white font-heading font-bold text-lg">Controle Tecnológico &amp; Slump</h3>
+<p class="text-slate-300 text-xs mt-1">Ruptura de corpos de prova e laudos rastreáveis.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SolutionsAndServicesSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="py-20 bg-white" data-purpose="projects-showcase" id="obras">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="reveal mb-12">
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-[#001e42] inline-block relative">
+            Projetos e obras
+            <span class="block w-20 h-1 bg-[#001e42] mt-2"></span>
+</h2>
+<p class="text-slate-600 text-sm sm:text-base mt-3 max-w-2xl">
+            Conheça nossos projetos atendidos com rigor técnico, pontualidade de descarregamento e satisfação dos engenheiros responsáveis.
+          </p>
+</div>
+<!-- 4 Vertical Cards Grid as in Reference -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger="110">
+<!-- Card 1: Residencial -->
+<div class="reveal group rounded-2xl overflow-hidden bg-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-200">
+<div class="relative h-80 overflow-hidden">
+<img alt="Obras Residenciais e Condomínios" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/construção civil.jpg" width="768" height="1376" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40"></div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between">
+<div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wide">Construção Civil</div>
+<h3 class="font-heading font-bold text-slate-900 text-base mb-3">Casas &amp; Condomínios</h3>
+<a class="w-full bg-brand-blue hover:bg-brand-blueDark text-white text-center py-2.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wider block transition" href="#orcamento">
+                Residenciais
+              </a>
+</div>
+</div>
+<!-- Card 2: Edificação em Altura -->
+<div class="reveal group rounded-2xl overflow-hidden bg-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-200">
+<div class="relative h-80 overflow-hidden">
+<img alt="Edificações em Altura" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/engenharia vertical.jpg" width="768" height="1376" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40"></div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between">
+<div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wide">Engenharia Vertical</div>
+<h3 class="font-heading font-bold text-slate-900 text-base mb-3">Edificação em Altura</h3>
+<a class="w-full bg-brand-blue hover:bg-brand-blueDark text-white text-center py-2.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wider block transition" href="#orcamento">
+                Edifícios
+              </a>
+</div>
+</div>
+<!-- Card 3: Infraestrutura -->
+<div class="reveal group rounded-2xl overflow-hidden bg-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-200">
+<div class="relative h-80 overflow-hidden">
+<img alt="Infraestrutura e Obras Industriais" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/infraestrutura.jpg" width="768" height="1376" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40"></div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between">
+<div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wide">Infraestrutura</div>
+<h3 class="font-heading font-bold text-slate-900 text-base mb-3">Obras Industriais</h3>
+<a class="w-full bg-brand-blue hover:bg-brand-blueDark text-white text-center py-2.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wider block transition" href="#orcamento">
+                Industrial
+              </a>
+</div>
+</div>
+<!-- Card 4: Comercial e Hotéis -->
+<div class="reveal group rounded-2xl overflow-hidden bg-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-slate-200">
+<div class="relative h-80 overflow-hidden">
+<img alt="Comércio, Lajes e Shoppings" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="concretex3/Commercial.jpg" width="768" height="1376" loading="lazy" decoding="async">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40"></div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between">
+<div class="text-xs text-slate-500 font-semibold mb-1 uppercase tracking-wide">Comercial</div>
+<h3 class="font-heading font-bold text-slate-900 text-base mb-3">Galpões &amp; Hotéis</h3>
+<a class="w-full bg-brand-blue hover:bg-brand-blueDark text-white text-center py-2.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wider block transition" href="#orcamento">
+                Comercial
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: TestimonialsSection -->
+<section class="py-24 bg-gradient-to-b from-[#003770] to-[#001e42] relative overflow-hidden text-white" data-purpose="client-testimonials" id="depoimentos">
+<!-- Geometric Background Motifs based on referencia.webp -->
+<div class="absolute -top-10 left-0 w-48 h-48 bg-blue-900/30 blur-3xl rounded-full"></div>
+<div class="absolute -bottom-10 right-0 w-64 h-64 bg-brand-lightBlue/20 blur-3xl rounded-full"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Header -->
+<div class="reveal text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-heading text-3xl sm:text-4xl font-extrabold uppercase tracking-wide mb-3">
+            Depoimentos
+          </h2>
+<p class="text-blue-100 text-sm sm:text-base leading-relaxed font-light">
+            Descubra como nossas soluções em concreto dosado e pontualidade têm superado as expectativas de construtoras e calculistas.
+          </p>
+</div>
+<!-- 3 Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center" data-stagger="140">
+<!-- Testimonial 1 -->
+<div class="reveal bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-between hover:bg-white/15 transition duration-300">
+<p class="text-sm sm:text-base italic text-slate-200 mb-6 leading-relaxed">
+              "Com o sistema de entrega programada e bombeamento da Concretex, sentimos uma enorme agilidade nas lajes e zero desperdício no canteiro. O slump test sempre vem cravado."
+            </p>
+<div class="flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-brand-navy font-bold text-lg mb-2 shadow-lg">
+<i class="fa-solid fa-helmet-safety text-brand-blue text-2xl"></i>
+</div>
+<div class="font-heading font-bold text-sm text-white">Eng. Oberdan Ferreira</div>
+<span class="text-xs text-blue-200">Diretor de Obras - Primus Engenharia</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="reveal bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-between hover:bg-white/15 transition duration-300">
+<p class="text-sm sm:text-base italic text-slate-200 mb-6 leading-relaxed">
+              "Estamos extremamente satisfeitos com o suporte laboratorial da Concretex. O concreto atinge os MPa previstos com antecedência e a frota não deixa a obra na mão."
+            </p>
+<div class="flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-brand-navy font-bold text-lg mb-2 shadow-lg">
+<i class="fa-solid fa-compass-drafting text-brand-blue text-2xl"></i>
+</div>
+<div class="font-heading font-bold text-sm text-white">Eng. Cristian Mariaca</div>
+<span class="text-xs text-blue-200">Gerente Técnico - Construtora Habitat</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="reveal bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 flex flex-col justify-between hover:bg-white/15 transition duration-300">
+<p class="text-sm sm:text-base italic text-slate-200 mb-6 leading-relaxed">
+              "A agilidade no agendamento e o profissionalismo dos operadores de bomba nos dão total tranquilidade para concretar em avenidas movimentadas da cidade."
+            </p>
+<div class="flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-brand-navy font-bold text-lg mb-2 shadow-lg">
+<i class="fa-solid fa-building-circle-check text-brand-blue text-2xl"></i>
+</div>
+<div class="font-heading font-bold text-sm text-white">Marcos Vinícius Prado</div>
+<span class="text-xs text-blue-200">Coordenador de Infraestrutura &amp; Projetos</span>
+</div>
+</div>
+</div>
+<!-- Carousel Pagination Dots (Visual element matching reference) -->
+<div class="flex justify-center items-center space-x-2 mt-12"><span class="w-2.5 h-2.5 rounded-full bg-white"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-white/40"></span></div>
+</div>
+</section>
+<!-- END: TestimonialsSection -->
+<!-- BEGIN: QuickQuoteForm -->
+<section class="py-16 bg-slate-100" data-purpose="quick-quote-lead-gen" id="orcamento">
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+<div class="reveal bg-white rounded-2xl shadow-xl p-8 sm:p-10 border border-slate-200">
+<div class="text-center mb-8">
+<span class="text-brand-blue font-bold text-xs uppercase tracking-widest">Atendimento Rápido</span>
+<h3 class="font-heading text-2xl sm:text-3xl font-extrabold text-[#001e42] mt-1">
+              Peça uma Cotação para sua Concretagem
+            </h3>
+<p class="text-slate-600 text-sm mt-2">
+              Informe a localização da sua obra e volume estimado (m³). Retornamos em poucos minutos.
+            </p>
+</div>
+<form id="quote-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4" novalidate>
+<div>
+<label for="f-nome" class="block text-xs font-bold text-slate-700 uppercase mb-1">Seu Nome / Razão Social</label>
+<input id="f-nome" class="w-full text-base rounded-lg border-slate-300 focus:border-brand-blue focus:ring-brand-blue" placeholder="Ex: Engenharia &amp; Construções" required="" maxlength="120" autocomplete="name" type="text">
+</div>
+<div>
+<label for="f-tel" class="block text-xs font-bold text-slate-700 uppercase mb-1">Telefone / WhatsApp</label>
+<input id="f-tel" class="w-full text-base rounded-lg border-slate-300 focus:border-brand-blue focus:ring-brand-blue" placeholder="(81) 99999-9999" required="" maxlength="20" autocomplete="tel" pattern="[0-9 ()+-]{8,20}" title="Informe o DDD e o número, ex.: (81) 99999-9999" type="tel">
+</div>
+<div>
+<label for="f-volume" class="block text-xs font-bold text-slate-700 uppercase mb-1">Volume Previsto (m³)</label>
+<input id="f-volume" class="w-full text-base rounded-lg border-slate-300 focus:border-brand-blue focus:ring-brand-blue" placeholder="Ex: 24 m³" maxlength="20" inputmode="decimal" type="text">
+</div>
+<div>
+<label for="f-tipo" class="block text-xs font-bold text-slate-700 uppercase mb-1">Tipo de Aplicação</label>
+<select id="f-tipo" class="w-full text-base rounded-lg border-slate-300 focus:border-brand-blue focus:ring-brand-blue">
+<option>Concreto com Bombeamento</option>
+<option>Concreto Convencional (Descarga Direta)</option>
+<option>Piso Industrial Polido</option>
+<option>Argamassa Estabilizada</option>
+</select>
+</div>
+<div class="sm:col-span-2">
+<label for="f-endereco" class="block text-xs font-bold text-slate-700 uppercase mb-1">Endereço ou Bairro da Obra</label>
+<input id="f-endereco" class="w-full text-base rounded-lg border-slate-300 focus:border-brand-blue focus:ring-brand-blue" placeholder="Cidade / Bairro onde será feita a entrega" maxlength="160" autocomplete="street-address" type="text">
+</div>
+<div class="sm:col-span-2 mt-2">
+<button id="quote-submit" class="w-full bg-brand-navy hover:bg-brand-dark text-white font-bold py-3.5 rounded-lg text-sm font-heading uppercase tracking-wider transition transform hover:-translate-y-0.5 shadow-md border border-slate-700 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0 flex items-center justify-center gap-2" type="submit">
+                Receber Orçamento Imediato
+              </button>
+</div>
+<div id="form-success" hidden tabindex="-1" role="status" class="sm:col-span-2 mt-2 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i>
+<span>Solicitação enviada! Um consultor técnico da Concretex entrará em contato pelo telefone informado.</span>
+</div>
+</form>
+</div>
+<!-- MAPA DA CENTRAL DE USINAGEM (GOOGLE MAPS) -->
+<div class="reveal mt-8 bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+<div class="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-3 bg-brand-navy border-b border-brand-navy">
+<span class="text-xs text-brand-lightBlue font-bold uppercase tracking-widest">Central de Usinagem // Caruaru - PE</span>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+das+Ind%C3%BAstrias,+1200,+Caruaru%2C+PE" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-brand-accent transition font-semibold">ABRIR NO GOOGLE MAPS ↗</a>
+</div>
+<iframe
+src="https://www.google.com/maps?q=Av.+das+Ind%C3%BAstrias,+1200,+Caruaru%2C+Pernambuco%2C+Brasil&amp;z=15&amp;output=embed"
+title="Mapa da central de usinagem da Concretex em Caruaru - PE"
+width="100%"
+height="340"
+style="border:0;"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+allowfullscreen>
+</iframe>
+<div class="px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+<span class="font-semibold"><i class="fa-solid fa-location-dot text-brand-blue mr-1"></i>Av. das Indústrias, 1200 — Polo Estrutural, Caruaru/PE</span>
+<span class="font-semibold"><i class="fa-solid fa-clock text-brand-blue mr-1"></i>Seg a Sex 06:00–18:00 · Sáb 06:00–13:00</span>
+<a class="font-bold text-brand-blue hover:text-brand-dark transition break-all" href="mailto:engenharia@concretoaparente.com.br"><i class="fa-solid fa-envelope mr-1"></i>engenharia@concretoaparente.com.br</a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: QuickQuoteForm -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-[#00132b] text-slate-300 pt-16 pb-8 border-t border-blue-950 relative overflow-hidden" data-purpose="site-footer" id="contato">
+<!-- Stylized Geometric Cutout Shapes in Footer matching reference -->
+<div class="absolute -bottom-16 -left-16 w-48 h-48 bg-brand-blue/30 transform rotate-45 pointer-events-none"></div>
+<div class="absolute top-0 right-0 w-40 h-40 bg-blue-800/10 transform rotate-12 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+<!-- Col 1: Brand & Certification -->
+<div class="lg:col-span-1 space-y-4">
+<img alt="Concretex Logo" class="h-8 w-auto brightness-0 invert" src="concretex3/logo-web.png" width="512" height="168" loading="lazy" decoding="async">
+<p class="text-xs text-slate-400 leading-relaxed">
+            Excelência em dosagem de concreto usinado, logística e controle laboratorial.
+          </p>
+<div class="text-[10px] text-slate-400 tracking-wide">CNPJ: 00.000.000/0001-00 · CREA/PE</div>
+<!-- ISO Quality Badge Mockup -->
+<div class="border border-cyan-400/40 rounded-lg p-2.5 bg-blue-950/40 inline-flex items-center space-x-3 text-cyan-300">
+<i class="fa-solid fa-certificate text-2xl"></i>
+<div>
+<div class="text-[10px] uppercase font-bold tracking-wider">Qualidade Certificada</div>
+<div class="text-xs font-semibold text-white">ISO 9001 / ABNT</div>
+</div>
+</div>
+</div>
+<!-- Col 2: Contatos -->
+<div class="space-y-3">
+<h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">
+            Contatos
+          </h4>
+<ul class="text-xs space-y-2 text-slate-400">
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#orcamento"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Pedidos e Vendas</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#orcamento"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Assistência Técnica</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#orcamento"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Trabalhe Conosco</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#orcamento"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Programação de Betoneiras</a></li>
+</ul>
+</div>
+<!-- Col 3: Soluções Concretex -->
+<div class="space-y-3">
+<h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">
+            Soluções Concretex
+          </h4>
+<ul class="text-xs space-y-2 text-slate-400">
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#servicos"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Concreto Usinado Fck</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#servicos"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Bombeamento de Lajes</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#servicos"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Concreto Auto-Adensável (CAA)</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#servicos"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Pavimentos e Pisos Industriais</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#servicos"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Ensaios de Compressão</a></li>
+</ul>
+</div>
+<!-- Col 4: Políticas & Governança -->
+<div class="space-y-3">
+<h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider">
+            Políticas &amp; Ética
+          </h4>
+<ul class="text-xs space-y-2 text-slate-400">
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Política de Qualidade</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Segurança e Meio Ambiente</a></li>
+<li><a class="hover:text-brand-accent transition py-1 inline-block" href="#"><i class="fa-solid fa-angle-right mr-1 text-brand-accent"></i> Proteção de Dados (LGPD)</a></li>
+</ul>
+<!-- Hotline Box -->
+<div class="mt-4 border border-blue-800 rounded-lg p-2.5 text-center bg-blue-950/60">
+<span class="text-[10px] uppercase font-bold text-slate-400 block">Canal Direto / Engenharia</span>
+<a class="text-xs font-bold text-cyan-300 tracking-wider break-all hover:text-brand-accent transition" href="mailto:engenharia@concretoaparente.com.br">engenharia@concretoaparente.com.br</a>
+</div>
+</div>
+<!-- Col 5: Localização e Central Telefônica -->
+<div class="space-y-3">
+<h4 class="font-heading font-bold text-white text-sm uppercase tracking-wider flex items-center gap-1.5">
+<i class="fa-solid fa-location-dot"></i> Central &amp; Usina
+          </h4>
+<p class="text-xs text-slate-400 leading-relaxed">
+            Av. das Indústrias, 1200 — Polo Estrutural, Caruaru/PE.<br>
+            Atendimento em Caruaru &amp; região.
+          </p>
+<div class="border-2 border-slate-600 rounded-xl p-3 bg-[#001e42] text-center shadow-lg">
+<div class="text-[10px] text-white uppercase font-bold tracking-widest">Central Comercial / WhatsApp</div>
+<a class="text-base font-extrabold text-white mt-0.5 tracking-wide flex items-center justify-center gap-1.5 hover:text-brand-lightBlue transition" href="https://wa.me/5581999999999" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-whatsapp text-cyan-300"></i> +55 (81) 99999-9999
+</a>
+<div class="text-[11px] text-slate-300 font-semibold mt-1.5 leading-relaxed">Seg a Sex 06:00–18:00 · Sáb 06:00–13:00</div>
+<a class="text-xs font-bold text-cyan-300 tracking-wider break-all hover:text-brand-accent transition mt-2 block" href="mailto:engenharia@concretoaparente.com.br"><i class="fa-solid fa-envelope mr-1"></i>engenharia@concretoaparente.com.br</a>
+</div>
+</div>
+</div>
+<!-- Footer Sub-bar -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+<div>
+          © 2026 Concretex Ltda. | Todos os direitos reservados.
+        </div>
+<!-- Social Icons -->
+<div class="flex items-center space-x-4 text-slate-400 text-sm">
+<a class="hover:text-brand-accent transition py-1 inline-block" href="#" aria-label="YouTube da Concretex"><i class="fa-brands fa-youtube"></i></a>
+<a class="hover:text-brand-accent transition py-1 inline-block" href="#" aria-label="Facebook da Concretex"><i class="fa-brands fa-facebook"></i></a>
+<a class="hover:text-brand-accent transition py-1 inline-block" href="#" aria-label="Instagram da Concretex"><i class="fa-brands fa-instagram"></i></a>
+<a class="hover:text-brand-accent transition py-1 inline-block" href="#" aria-label="LinkedIn da Concretex"><i class="fa-brands fa-linkedin"></i></a>
+<a class="hover:text-brand-accent transition py-1 inline-block" href="#" aria-label="TikTok da Concretex"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+<!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+<a href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20concreto%20usinado" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Concretex no WhatsApp" title="Falar no WhatsApp" class="wa-float fixed z-50 w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white border-2 border-[#25D366] hover:border-[#128C7E] rounded-full flex items-center justify-center shadow-lg cursor-pointer group">
+<svg class="w-7 h-7 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
+
+<script>
+(function () {
+  var header = document.getElementById('main-header');
+  if (!header) return;
+  var update = function () {
+    var scrolled = window.scrollY > 40;
+    header.classList.toggle('bg-brand-dark', scrolled);
+    header.classList.toggle('bg-brand-navy', !scrolled);
+    header.classList.toggle('shadow-none', scrolled);
+  };
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function () { update(); ticking = false; });
+    }
+  }, { passive: true });
+  update();
+})();
+</script>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('#hero-dots button'));
+  if (slides.length < 2) return;
+  var index = 0;
+  var timer = null;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(i) {
+    slides.forEach(function (s, n) { s.classList.toggle('is-active', n === i); });
+    dots.forEach(function (d, n) {
+      d.setAttribute('aria-current', n === i ? 'true' : 'false');
+      d.classList.toggle('bg-white', n === i);
+      d.classList.toggle('bg-white/40', n !== i);
+    });
+    index = i;
+  }
+  function next() { show((index + 1) % slides.length); }
+  function schedule() {
+    if (reduced) return;
+    clearInterval(timer);
+    timer = setInterval(next, 7000);
+  }
+
+  dots.forEach(function (dot, n) {
+    dot.addEventListener('click', function () { show(n); schedule(); });
+  });
+  schedule();
+})();
+</script>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-stagger]').forEach(function (group) {
+    var step = parseInt(group.getAttribute('data-stagger'), 10) || 80;
+    Array.prototype.forEach.call(group.children, function (child, i) {
+      if (child.classList.contains('reveal')) {
+        child.style.setProperty('--reveal-delay', (i * step) + 'ms');
+      }
+    });
+  });
+  var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function finish(el) {
+    el.classList.add('is-visible');
+    var done = false;
+    var clean = function () {
+      if (done) return;
+      done = true;
+      el.classList.remove('reveal', 'is-visible');
+      el.style.removeProperty('--reveal-delay');
+    };
+    el.addEventListener('transitionend', function handler(ev) {
+      if (ev.target !== el) return;
+      el.removeEventListener('transitionend', handler);
+      clean();
+    });
+    setTimeout(clean, 1600);
+  }
+  if ('IntersectionObserver' in window && !reduced) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          finish(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var form = document.getElementById('quote-form');
+  if (!form) return;
+  var btn = document.getElementById('quote-submit');
+  var ok = document.getElementById('form-success');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i><span>Enviando…</span>';
+    setTimeout(function () {
+      ok.hidden = false;
+      ok.focus();
+      btn.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Solicitação Enviada</span>';
+    }, 600);
+  });
+})();
+</script>
+
+</body></html>
